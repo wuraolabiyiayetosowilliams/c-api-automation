@@ -1,0 +1,132 @@
+name: Postman Test and Allure Report
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 18 * * 4' # Runs every Wednesday by 4pm
+    - cron: '0 18 * * 5' # Runs every Friday by 4pm
+    - cron: '0 20 * * 0' # Runs every Sunday by 4pm
+jobs:
+  run_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install newman and newman-reporter-allure
+        run: |
+          npm install -g newman newman-reporter-allure
+          echo "Newman and newman-reporter-allure installed."
+
+      - name: Run Postman tests
+        if: always()
+        continue-on-error: true
+        run: |
+           newman run Postman-Collections/Postman-Collections.json -e auth-dev_postman_environment.json --reporters cli,allure
+           echo "Postman tests run."
+
+      - name: Get Allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      # - name: Copy existing content to allure-history
+      #   run: |
+      #     mkdir -p allure-history
+      #     if [ -d gh-pages ]; then
+      #       cp -r gh-pages/* allure-history/
+      #     fi
+
+      - name: Allure report action
+        id: build
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        continue-on-error: true
+        with:
+          allure_results: allure-results
+          gh_pages: gh-pages
+          allure_report: allure-report
+          allure_history: allure-history
+
+      - name: Deploy report to GitHub Pages
+        id: deploy
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
+
+      - name: Wait for Allure report to be generated
+        if: always()
+        continue-on-error: true
+        run: sleep 120
+
+      - name: Find new folder in gh-pages
+        id: new_folder
+        run: |
+          new_folder=$(find gh-pages -mindepth 1 -maxdepth 1 -type d -name '[0-9]*' | sort -n | tail -n 1)
+          new_folder_number=$(basename $new_folder)
+          echo "New Folder Number: $new_folder_number"
+          echo "::set-output name=new_folder_number::$new_folder_number"
+
+      - name: Update Allure Report Widget Title
+        continue-on-error: true
+        run: |
+          new_folder_number=${{ steps.new_folder.outputs.new_folder_number }}
+          summary_path="gh-pages/$new_folder_number/widgets/summary.json"
+          echo "Summary Path: $summary_path"
+          if [[ -e "$summary_path" ]]; then
+            cat "$summary_path"  # Print content before
+            sudo sed -i 's/Allure Report/Crendly - API Quality Readiness/' "$summary_path"
+            cat "$summary_path"  # Print content after
+          else
+            echo "Error: summary.json not found in the new folder."
+          fi
+
+      - name: Parse new summary.json
+        id: parse_new_json
+        run: |
+          new_summary_path="gh-pages/${{ steps.new_folder.outputs.new_folder_number }}/widgets/summary.json"
+          echo "New Summary Path: $new_summary_path"
+          if [ -f "$new_summary_path" ]; then
+            cat "$new_summary_path"
+            passed_tests=$(jq -r '.statistic.passed' "$new_summary_path")
+            failed_tests=$(jq -r '.statistic.failed' "$new_summary_path")
+            total_tests=$((passed_tests + failed_tests))
+            if [ "$total_tests" -gt 0 ]; then
+              passing_percentage=$(( passed_tests * 100 / total_tests ))
+              failing_percentage=$(( failed_tests * 100 / total_tests ))
+            else
+              passing_percentage=0
+              failing_percentage=0
+            fi
+            echo "Passed Tests: $passed_tests"
+            echo "Failed Tests: $failed_tests"
+            echo "Passing Percentage: $passing_percentage%"
+            echo "Failing Percentage: $failing_percentage%"
+            echo "::set-output name=passing_percentage::$passing_percentage"
+            echo "::set-output name=failing_percentage::$failing_percentage"
+            echo "::set-output name=passed_tests::$passed_tests"
+            echo "::set-output name=failed_tests::$failed_tests"
+          else
+            echo "summary.json not found"
+            echo "::set-output name=passing_percentage::0"
+            echo "::set-output name=failing_percentage::0"
+            echo "::set-output name=passed_tests::0"
+            echo "::set-output name=failed_tests::0"
+          fi
+
+
+            *Crendly Authentication - API Quality Readiness*
+            *Contributors - Wuraola Williams*
+            Status: ${{ job.status }}
+            Passing Tests: ${{ steps.parse_new_json.outputs.passing_percentage }}%
+            Failing Tests: ${{ steps.parse_new_json.outputs.failing_percentage }}%
+            Total Passed: ${{ steps.parse_new_json.outputs.passed_tests }}
+            Total Failed: ${{ steps.parse_new_json.outputs.failed_tests }}
+            GitHub Pages URL: ${{ secrets.PAGES_URL }}/${{ steps.new_folder.outputs.new_folder_number }}
