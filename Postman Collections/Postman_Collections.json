@@ -667,7 +667,7 @@
 													"});\r",
 													"\r",
 													"pm.test(\"Invalid username\", function () {\r",
-													"    pm.expect(pm.response.text()).to.include(\"Incorrect email or password/passcode\");\r",
+													"    pm.expect(pm.response.text()).to.include(\"Incorrect email and/or passcode\");\r",
 													"});\r",
 													"\r",
 													"pm.test(\"Status code is 400\", function () {\r",
