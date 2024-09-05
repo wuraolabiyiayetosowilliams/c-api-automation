@@ -666,11 +666,21 @@
 													"    pm.response.to.have.status(400);\r",
 													"});\r",
 													"\r",
-													"pm.test(\"Invalid passcode\", function () {\r",
-													"    pm.expect(pm.response.text()).to.include(\"Incorrect email and/or passcode\");\r",
+													"pm.test(\"Invalid username\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"Incorrect email or password/passcode\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code is 400\", function () {\r",
+													"  pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response has not token\", function () {\r",
+													"  var jsonData = pm.response.json();\r",
+													"  pm.expect(jsonData).to.not.have.property(\"token\");\r",
 													"});"
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -703,7 +713,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"channelId\": \"Crendly\",\n  \"email\": \"testonboard@sharklasers.com\",\n  \"password\": \"00000\"\n}",
+											"raw": "{\n  \"channelId\": \"Crendly\",\n  \"email\": \"testonboa@sharklasers.com\",\n  \"password\": \"00000\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
