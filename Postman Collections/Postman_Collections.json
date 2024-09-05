@@ -836,7 +836,7 @@
 													"  pm.response.to.have.status(400);\r",
 													"});\r",
 													"\r",
-													"pm.test(\"Response has not token\", function () {\r",
+													"pm.test(\"Response has no token\", function () {\r",
 													"  var jsonData = pm.response.json();\r",
 													"  pm.expect(jsonData).to.not.have.property(\"token\");\r",
 													"});"
@@ -990,12 +990,21 @@
 													"    pm.response.to.have.status(400);\r",
 													"});\r",
 													"\r",
+													"pm.test(\"Invalid username\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"Incorrect email and/or passcode\");\r",
+													"});\r",
 													"\r",
-													"pm.test(\"empty Passcode\", function () {\r",
-													"    pm.expect(pm.response.text()).to.include(\"Password is required\");\r",
+													"pm.test(\"Status code is 400\", function () {\r",
+													"  pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response has no token\", function () {\r",
+													"  var jsonData = pm.response.json();\r",
+													"  pm.expect(jsonData).to.not.have.property(\"token\");\r",
 													"});"
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -1028,7 +1037,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"channelId\": \"Crendly\",\n  \"email\": \"testonboard@sharklasers.com\",\n  \"password\": \"\"\n}",
+											"raw": "{\n  \"channelId\": \"Crendly\",\n  \"email\": \"onboard@sharklasers.com\",\n  \"password\": \"000000\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
