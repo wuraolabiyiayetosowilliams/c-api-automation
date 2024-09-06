@@ -151,16 +151,6 @@
 											"script": {
 												"id": "85c28707-4239-4350-add9-c5f326d32e0e",
 												"exec": [
-													"var jsonData = JSON.parse(responseBody);\r",
-													"\r",
-													"//pm.environment.set(\"access_token\", \"Bearer \"+jsonData.access_token);\r",
-													"\r",
-													"value = jsonData.data.access_token\r",
-													"\r",
-													"console.log(value)\r",
-													"\r",
-													"pm.environment.set(\"login_token\",value);\r",
-													"\r",
 													"pm.test(\"Login\",function () {\r",
 													"    pm.response.to.have.status(200);\r",
 													"});\r",
@@ -184,6 +174,25 @@
 													"  pm.expect(parsedBody.password).to.match(/^\\d+$/); // Checks if the password contains only numbers\r",
 													"});\r",
 													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "3567a93d-c16e-4bd3-b6d4-6c551d2fd868",
+												"exec": [
+													"var jsonData = JSON.parse(responseBody);\r",
+													"\r",
+													"//pm.environment.set(\"access_token\", \"Bearer \"+jsonData.access_token);\r",
+													"\r",
+													"value = jsonData.data.access_token\r",
+													"\r",
+													"console.log(value)\r",
+													"\r",
+													"pm.environment.set(\"login_token\",value);"
 												],
 												"type": "text/javascript",
 												"packages": {}
