@@ -87,7 +87,7 @@ jobs:
           echo "Summary Path: $summary_path"
           if [[ -e "$summary_path" ]]; then
             cat "$summary_path"  # Print content before
-            sudo sed -i 's/Allure Report/Crendly - API Quality Readiness/' "$summary_path"
+            sudo sed -i 's/Allure Report/CrendlyCheck - API Quality Readiness/' "$summary_path"
             cat "$summary_path"  # Print content after
           else
             echo "Error: summary.json not found in the latest folder."
@@ -121,7 +121,7 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_CHANNEL: 'C070KUKPDLZ'
           SLACK_MESSAGE: |
-            *Getlinked - API Quality Readiness*
+            *CrendlyCheck - API Quality Readiness*
             *Contributors - Wuraola*
             Status: ${{ job.status }}
             Passing Tests: ${{ steps.parse_json.outputs.passing_percentage }}%
