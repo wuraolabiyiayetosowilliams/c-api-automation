@@ -1,0 +1,4285 @@
+{
+	"info": {
+		"_postman_id": "ac4fa02f-e756-44ed-a40e-24a424e2ea4f",
+		"name": "Crendly-Check",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "Authentication",
+							"item": [
+								{
+									"name": "OnboardCompany",
+									"item": [
+										{
+											"name": "OnboardCompany-Valid details",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "dd41c1d1-d6e4-4461-a225-21d9c8b606a9",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Response has required fields\", function () {\r",
+															"    pm.expect(responseData).to.be.an('object');\r",
+															"    pm.expect(responseData.data).to.be.a('boolean');\r",
+															"    pm.expect(responseData.message).to.be.a('string');\r",
+															"    pm.expect(responseData.status).to.be.a('boolean');\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Verify response contains status\", function () {\r",
+															"    pm.expect(responseData.status).to.eql(true);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Message should return successful with valid details\", function () {\r",
+															"    pm.expect(responseData.message).to.equal(\"Operation completed successfully\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "d07d4a63-cd7b-4b2e-ac7b-8501d1745814",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"{{$randomUserName}}@mailinator.com\",\n  \"name\": \"{{$randomFullName}}\",//\"Studio_66\"\n  \"phoneNumber\": \"{{$randomPhoneNumber}}\",//08074255255\n  \"companyTypeId\": \"{{companyTypeId}}\",//\"43ece7a6-fd74-4f8f-96a4-21af64427426\"\n  \"adminRequest\": {\n    \"email\": \"{{$randomUserName}}@yopmail.com\",\n    \"firstName\": \"{{$randomFirstName}}\",//\"Damijo\"\n    \"lastName\": \"{{$randomLastName}}\",//\"Damisi-Damijo\"\n    \"phoneNumber\": \"{{$randomPhoneNumberExt}}\"// \"08087334543\"\n  },\n  \"primaryAddress\": {\n    \"city\": \"Ikeja\",\n    \"houseNumber\": \"11\",\n    \"state\": \"Lagos\",\n    \"street\": \"Falomo\",\n    \"country\": \"Nigeria\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/OnboardCompany"
+											},
+											"response": [
+												{
+													"id": "c3c50ab4-577b-46b8-8258-2a8a310a41f9",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"name\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"companyTypeId\": \"<uuid>\",\n  \"adminRequest\": {\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\"\n  },\n  \"primaryAddress\": {\n    \"city\": \"<string>\",\n    \"houseNumber\": \"<string>\",\n    \"state\": \"<string>\",\n    \"street\": \"<string>\",\n    \"country\": \"<string>\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/OnboardCompany"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "OnboardCompany-Valid details Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "dd41c1d1-d6e4-4461-a225-21d9c8b606a9",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Response has required fields\", function () {\r",
+															"    pm.expect(responseData).to.be.an('object');\r",
+															"    pm.expect(responseData.data).to.be.a('boolean');\r",
+															"    pm.expect(responseData.message).to.be.a('string');\r",
+															"    pm.expect(responseData.status).to.be.a('boolean');\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Verify response contains status\", function () {\r",
+															"    pm.expect(responseData.status).to.eql(true);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Message should return successful with valid details\", function () {\r",
+															"    pm.expect(responseData.message).to.equal(\"Operation completed successfully\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "b87bec84-c3a5-4f20-b5c5-10d33ccb3a1f",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"daddy@mailinator.com\",\n  \"name\": \"{{$randomFullName}}\",//\"Studio_66\"\n  \"phoneNumber\": \"{{$randomPhoneNumber}}\",//08074255255\n  \"companyTypeId\": \"{{companyTypeId}}\",//\"43ece7a6-fd74-4f8f-96a4-21af64427426\"\n  \"adminRequest\": {\n    \"email\": \"mummy@yopmail.com\",\n    \"firstName\": \"{{$randomFirstName}}\",//\"Damijo\"\n    \"lastName\": \"{{$randomLastName}}\",//\"Damisi-Damijo\"\n    \"phoneNumber\": \"{{$randomPhoneNumberExt}}\"// \"08087334543\"\n  },\n  \"primaryAddress\": {\n    \"city\": \"Ikeja\",\n    \"houseNumber\": \"11\",\n    \"state\": \"Lagos\",\n    \"street\": \"Falomo\",\n    \"country\": \"Nigeria\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/OnboardCompany"
+											},
+											"response": [
+												{
+													"id": "ca9e3b78-3cbb-464b-b803-ee3913386337",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"name\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"companyTypeId\": \"<uuid>\",\n  \"adminRequest\": {\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\"\n  },\n  \"primaryAddress\": {\n    \"city\": \"<string>\",\n    \"houseNumber\": \"<string>\",\n    \"state\": \"<string>\",\n    \"street\": \"<string>\",\n    \"country\": \"<string>\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/OnboardCompany"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "OnboardCompany-Exisiting Company Email",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "dd41c1d1-d6e4-4461-a225-21d9c8b606a9",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Error message for duplicate company email\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.include(\"Email already exists\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "f252ad04-2935-4cc8-a5bc-d6ea1f9d44ca",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"tito66@mailinator.com\",\n  \"name\": \"{{$randomFullName}}\",//\"Studio_66\"\n  \"phoneNumber\": \"{{phone_number}}\",//08074255255\n  \"companyTypeId\": \"43ece7a6-fd74-4f8f-96a4-21af64427426\",\n  \"adminRequest\": {\n    \"email\": \"{{user_email}}\",//\"steven@mailinator.com\"\n    \"firstName\": \"{{$randomFirstName}}\",//\"Damijo\"\n    \"lastName\": \"{{$randomLastName}}\",//\"Damisi-Damijo\"\n    \"phoneNumber\": \"{{phoneNumber}}\"// \"08087334543\"\n  },\n  \"primaryAddress\": {\n    \"city\": \"Ikeja\",\n    \"houseNumber\": \"11\",\n    \"state\": \"Lagos\",\n    \"street\": \"Falomo\",\n    \"country\": \"Nigeria\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/OnboardCompany"
+											},
+											"response": [
+												{
+													"id": "28fda6d1-25bf-48c3-98f3-be98fb5cab3e",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"name\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"companyTypeId\": \"<uuid>\",\n  \"adminRequest\": {\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\"\n  },\n  \"primaryAddress\": {\n    \"city\": \"<string>\",\n    \"houseNumber\": \"<string>\",\n    \"state\": \"<string>\",\n    \"street\": \"<string>\",\n    \"country\": \"<string>\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/OnboardCompany"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "OnboardCompany-Registered phonenumber",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "dd41c1d1-d6e4-4461-a225-21d9c8b606a9",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"var responseData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Verify response contains status\", function () {\r",
+															"    pm.expect(responseData.status).to.eql(false);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Message should be descriptive\", function () {\r",
+															"    pm.expect(responseData.message).to.equal(\"Phonenumber already exists\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "87ed692b-6f7c-459f-96ba-ff956254457c",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"tito66@mailinator.com\",\n  \"name\": \"Studio_66\",//\"\"\n  \"phoneNumber\": \"08074255255\",//\n  \"companyTypeId\": \"43ece7a6-fd74-4f8f-96a4-21af64427426\",\n  \"adminRequest\": {\n    \"email\": \"{{user_email}}\",//\"steven@mailinator.com\"\n    \"firstName\": \"{{$randomFirstName}}\",//\"Damijo\"\n    \"lastName\": \"{{$randomLastName}}\",//\"Damisi-Damijo\"\n    \"phoneNumber\": \"{{phoneNumber}}\"// \"08087334543\"\n  },\n  \"primaryAddress\": {\n    \"city\": \"Ikeja\",\n    \"houseNumber\": \"11\",\n    \"state\": \"Lagos\",\n    \"street\": \"Falomo\",\n    \"country\": \"Nigeria\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/OnboardCompany"
+											},
+											"response": [
+												{
+													"id": "b6d0cbfe-0a48-4726-9801-dfcde2e1d830",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"name\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"companyTypeId\": \"<uuid>\",\n  \"adminRequest\": {\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\"\n  },\n  \"primaryAddress\": {\n    \"city\": \"<string>\",\n    \"houseNumber\": \"<string>\",\n    \"state\": \"<string>\",\n    \"street\": \"<string>\",\n    \"country\": \"<string>\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/OnboardCompany"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "OnboardCompany-Invalid details",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "dd41c1d1-d6e4-4461-a225-21d9c8b606a9",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"var responseData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Verify response contains status\", function () {\r",
+															"    pm.expect(responseData.status).to.eql(false);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Message should be descriptive\", function () {\r",
+															"    pm.expect(responseData.message).to.equal(\"Unique constraint violation on constraint: IX_Check_Companies_Email.\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "44880c90-55c7-437c-991b-4fa8332e4bce",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"@mailinator.com\",//\"tito66@mailinator.com\"\n  \"name\": \"St\",//\"Studio_66\"\n  \"phoneNumber\": \"90)77876\"\n  \"companyTypeId\": \"43ece7a6-fd74-4f8f-96a4-21af64427426\",\n  \"adminRequest\": {\n    \"email\": \"{{user_email}}\",//\"steven@mailinator.com\"\n    \"firstName\": \"{{$randomFirstName}}\",//\"Damijo\"\n    \"lastName\": \"{{$randomLastName}}\",//\"Damisi-Damijo\"\n    \"phoneNumber\": \"{{phoneNumber}}\"// \"08087334543\"\n  },\n  \"primaryAddress\": {\n    \"city\": \"Ikeja\",\n    \"houseNumber\": \"11\",\n    \"state\": \"Lagos\",\n    \"street\": \"Falomo\",\n    \"country\": \"Nigeria\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/OnboardCompany"
+											},
+											"response": [
+												{
+													"id": "a62623ed-0744-49f6-a8d6-ee37e0c56c95",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"name\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"companyTypeId\": \"<uuid>\",\n  \"adminRequest\": {\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\"\n  },\n  \"primaryAddress\": {\n    \"city\": \"<string>\",\n    \"houseNumber\": \"<string>\",\n    \"state\": \"<string>\",\n    \"street\": \"<string>\",\n    \"country\": \"<string>\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/OnboardCompany"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "OnboardCompany-Empty fields",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "1095b722-c39a-475f-904e-5720c113c63d",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Error message for missing fields\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.include(\"primaryAddress is required\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "2959ff87-1972-4ecc-aa95-d8f2f016b86e",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"email\": \"mail@mailinator.com\",//\"tito66@mailinator.com\"\r\n  \"name\": \"BigStudio\",//\"Studio_66\"\r\n  \"phoneNumber\": \"09090909090\"\r\n  \"companyTypeId\": \"43ece7a6-fd74-4f8f-96a4-21af64427426\",\r\n  \"adminRequest\": {\r\n    \"email\": \"{{user_email}}\",//\"steven@mailinator.com\"\r\n    \"firstName\": \"{{$randomFirstName}}\",//\"Damijo\"\r\n    \"lastName\": \"{{$randomLastName}}\",//\"Damisi-Damijo\"\r\n    \"phoneNumber\": \"{{phoneNumber}}\"// \"08087334543\"\r\n  },\r\n  \"primaryAddress\": {\r\n    \"city\": \"\",\r\n    \"houseNumber\": \"\",\r\n    \"state\": \"\",\r\n    \"street\": \"\",\r\n    \"country\": \"\"\r\n  }\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/OnboardCompany"
+											},
+											"response": [
+												{
+													"id": "ac4079cb-6370-49b7-b77a-197c8392d2a3",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"name\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"companyTypeId\": \"<uuid>\",\n  \"adminRequest\": {\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\"\n  },\n  \"primaryAddress\": {\n    \"city\": \"<string>\",\n    \"houseNumber\": \"<string>\",\n    \"state\": \"<string>\",\n    \"street\": \"<string>\",\n    \"country\": \"<string>\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/OnboardCompany"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "OnboardCompany-Empty companyTypeId",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "b85cd463-e331-432e-aec4-59e53dd017b4",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Error message for missing fields\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.include(\"companyTypeId is required\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "234c32c9-29a7-4c5e-8791-81da5166c6e8",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"email\": \"mail@mailinator.com\",\r\n  \"name\": \"BigStudio\",\r\n  \"phoneNumber\": \"09090909090\"\r\n  \"companyTypeId\": \"\",\r\n  \"adminRequest\": {\r\n    \"email\": \"{{user_email}}\",//\"steven@mailinator.com\"\r\n    \"firstName\": \"{{$randomFirstName}}\",//\"Damijo\"\r\n    \"lastName\": \"{{$randomLastName}}\",//\"Damisi-Damijo\"\r\n    \"phoneNumber\": \"{{phoneNumber}}\"// \"08087334543\"\r\n  },\r\n  \"primaryAddress\": {\r\n    \"city\": \"Ikeja\",\r\n    \"houseNumber\": \"1\",\r\n    \"state\": \"Lagos\",\r\n    \"street\": \"Gbemi\",\r\n    \"country\": \"Nigeria\"\r\n  }\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/OnboardCompany"
+											},
+											"response": [
+												{
+													"id": "c1ab7e89-65b4-46ab-b6b8-d01d14a84644",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"name\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"companyTypeId\": \"<uuid>\",\n  \"adminRequest\": {\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\"\n  },\n  \"primaryAddress\": {\n    \"city\": \"<string>\",\n    \"houseNumber\": \"<string>\",\n    \"state\": \"<string>\",\n    \"street\": \"<string>\",\n    \"country\": \"<string>\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/OnboardCompany"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										}
+									],
+									"id": "dc6da14a-e86d-4b24-8d70-43a8cbf9f57d"
+								},
+								{
+									"name": "AddKycDocuments",
+									"item": [
+										{
+											"name": "/api/v1/Authentication/AddKycDocuments",
+											"id": "fc9920a8-2304-45b8-973f-a49824f240bd",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"utilityBillUrl\": \"<string>\",\n  \"cacDocumentUrl\": \"<string>\",\n  \"taxClearanceUrl\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/AddKycDocuments"
+											},
+											"response": [
+												{
+													"id": "7250bcdd-88c2-49f0-9488-11b3848595c4",
+													"name": "Success",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"utilityBillUrl\": \"<string>\",\n  \"cacDocumentUrl\": \"<string>\",\n  \"taxClearanceUrl\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/AddKycDocuments"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										}
+									],
+									"id": "1cc22b17-3249-4c3e-b43c-ef2c0ab105e7"
+								},
+								{
+									"name": "GetPermissions",
+									"item": [
+										{
+											"name": "/api/v1/Authentication/GetPermissions",
+											"id": "667230e5-636e-4002-81d5-362ac002f9ee",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": "{{baseUrl}}/api/v1/Authentication/GetPermissions"
+											},
+											"response": [
+												{
+													"id": "acfd9064-812b-4a5f-9dcb-405bf843bc5e",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": "{{baseUrl}}/api/v1/Authentication/GetPermissions"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": [\n    {\n      \"dateCreated\": \"<dateTime>\",\n      \"dateModified\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"name\": 0\n    },\n    {\n      \"dateCreated\": \"<dateTime>\",\n      \"dateModified\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"name\": 3\n    }\n  ],\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										}
+									],
+									"id": "0957a343-42ce-46a4-851d-71521ebd956f"
+								},
+								{
+									"name": "GetRoles",
+									"item": [
+										{
+											"name": "/api/v1/Authentication/GetRoles",
+											"id": "84ae4144-2ee5-4064-a22e-1038f37e4e06",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"pageSize\": \"<integer>\",\n  \"pageNumber\": \"<integer>\",\n  \"searchString\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/GetRoles"
+											},
+											"response": [
+												{
+													"id": "e0238018-83d2-41dd-9984-69b1c633ea07",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": "{{baseUrl}}/api/v1/Authentication/GetRoles"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": {\n    \"data\": [\n      {\n        \"dateCreated\": \"<dateTime>\",\n        \"dateModified\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"name\": \"<string>\"\n      },\n      {\n        \"dateCreated\": \"<dateTime>\",\n        \"dateModified\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"name\": \"<string>\"\n      }\n    ],\n    \"count\": \"<long>\",\n    \"pageNumber\": \"<integer>\"\n  },\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										}
+									],
+									"id": "d3141f93-79d0-4115-badf-cdd3a28a99e9"
+								},
+								{
+									"name": "GetRole",
+									"item": [
+										{
+											"name": "{roleId}",
+											"item": [
+												{
+													"name": "/api/v1/Authentication/GetRole/:roleId",
+													"id": "d84c4e22-070c-42e2-9410-94a5f3998ae6",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/Authentication/GetRole/:roleId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Authentication",
+																"GetRole",
+																":roleId"
+															],
+															"variable": [
+																{
+																	"id": "9e9698d1-9165-4f6b-ad66-62ca27804a3b",
+																	"key": "roleId",
+																	"value": "<uuid>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "cce842e2-39ac-46a5-9fe4-ea39de87cfe8",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "text/plain"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "Authorization",
+																		"value": "<API Key>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/Authentication/GetRole/:roleId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"Authentication",
+																		"GetRole",
+																		":roleId"
+																	],
+																	"variable": [
+																		{
+																			"key": "roleId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": {\n    \"dateCreated\": \"<dateTime>\",\n    \"dateModified\": \"<dateTime>\",\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"permissions\": [\n      {\n        \"dateCreated\": \"<dateTime>\",\n        \"dateModified\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"name\": 2\n      },\n      {\n        \"dateCreated\": \"<dateTime>\",\n        \"dateModified\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"name\": 4\n      }\n    ]\n  },\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+														}
+													]
+												}
+											],
+											"id": "822ccc22-04fc-474f-8aa9-eb5d5099198b"
+										}
+									],
+									"id": "6accc0cd-1171-4ae3-aa41-3ecf3f18f43e"
+								},
+								{
+									"name": "CreateRole",
+									"item": [
+										{
+											"name": "/api/v1/Authentication/CreateRole",
+											"id": "e6a6796c-d1b5-4561-a71e-ba2c8dd49a6d",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"<string>\",\n  \"permissionId\": [\n    \"<uuid>\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/CreateRole"
+											},
+											"response": [
+												{
+													"id": "8678f1f7-dd42-4db3-955b-46dcc954cf08",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"<string>\",\n  \"permissionId\": [\n    \"<uuid>\"\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/CreateRole"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										}
+									],
+									"id": "6df2e8a4-ba2a-4246-a09e-952efbc7240e"
+								},
+								{
+									"name": "CreateUser",
+									"item": [
+										{
+											"name": "/api/v1/Authentication/CreateUser",
+											"id": "8b978774-56eb-4feb-a499-44b353cd7013",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"roleId\": \"<uuid>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/CreateUser"
+											},
+											"response": [
+												{
+													"id": "2a736040-f08b-4ed8-97f8-cddd36cb259f",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"roleId\": \"<uuid>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/CreateUser"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										}
+									],
+									"id": "6b2ccd12-9212-4137-8914-df5bff77b5ca"
+								},
+								{
+									"name": "ChangePassword",
+									"item": [
+										{
+											"name": "ChangePassword-MissingOldPassword",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "5d7f9265-2b5e-4b27-986d-5a870e528147",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Password validation for change password\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.eql(\"old password is required\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "02391cfe-f1ab-47d7-a3fb-422a36c70f79",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"oldPassword\": \"\",\n  \"newPassword\": \"damnjihhh@\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ChangePassword"
+											},
+											"response": [
+												{
+													"id": "5e7b5fd7-fee4-409f-9241-eff128d5d0b4",
+													"name": "Success",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"oldPassword\": \"<string>\",\n  \"newPassword\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ChangePassword"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "ChangePassword-NoNewPassword",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "f2915ce7-8669-450d-824d-abb38ec7c1a4",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Password validation for change password\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.eql(\"New password is required\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "bdc1a3aa-065b-4658-9403-0386f2e28905",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"oldPassword\": \"daserr@098_\",\n  \"newPassword\": \"\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ChangePassword"
+											},
+											"response": [
+												{
+													"id": "c87e83c5-676a-4abf-884b-f9980c4203a5",
+													"name": "Success",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"oldPassword\": \"<string>\",\n  \"newPassword\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ChangePassword"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "ChangePassword-PasswordComplexityCheck",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "9ad9d072-5e9b-44c1-a5c2-eba631fab421",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Password complexity check for change password\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.eql(\"Password does not meet complexity requirements.\");\r",
+															"    pm.expect(jsonData.errors.password).to.include(\"Password must contain uppercase, lowercase and specialand numeric characters.\");\r",
+															"    pm.expect(jsonData.errors.password).to.include(\"Password ms contain at least 8 characters\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "d50dad37-dd2d-4c13-b592-ba9af41434c8",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"oldPassword\": \"damilola_098@\",\n  \"newPassword\": \"date\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ChangePassword"
+											},
+											"response": [
+												{
+													"id": "f6563327-1b28-4b00-996e-7c891840e4ca",
+													"name": "Success",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"oldPassword\": \"<string>\",\n  \"newPassword\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ChangePassword"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										}
+									],
+									"id": "36984e40-b71a-400d-a9d9-6ca2de34d746"
+								},
+								{
+									"name": "GenerateEmailConfirmationToken",
+									"item": [
+										{
+											"name": "GenerateEmailConfirmationToken-InvalidEmailAddress",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "1ac8501d-d64b-4e81-8872-6354a37f4e51",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response title is 'One or more validation errors occurred.'\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.title).to.eql(\"One or more validation errors occurred.\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Error message for invalid email format\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.errors).to.have.property(\"Email\");\r",
+															"    pm.expect(jsonData.errors.Email).to.include(\"The Email field is not a valid e-mail address.\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "338fa6a0-6726-42c7-9b33-b8beddd8552f",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"@@mailinator.com\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/GenerateEmailConfirmationToken"
+											},
+											"response": [
+												{
+													"id": "dab1051c-f3ab-4e65-89d8-f9ed6890ba99",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/GenerateEmailConfirmationToken"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "GenerateEmailConfirmationToken-NoEmailAddress",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "18c16ef8-72da-4ec8-9263-38719cb6de21",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response title is 'One or more validation errors occurred.'\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.title).to.eql(\"One or more validation errors occurred.\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Validation with no email address\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.errors).to.have.property(\"Email\");\r",
+															"    pm.expect(jsonData.errors.Email).to.include(\"The Email field is required.\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "126890a6-a516-44ca-8845-9e4bb40a96a0",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"email\": \"\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/GenerateEmailConfirmationToken"
+											},
+											"response": [
+												{
+													"id": "35e51388-789f-4b89-b900-923f8e2843f0",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/GenerateEmailConfirmationToken"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "GenerateEmailConfirmationToken-Unregistered Email",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "95f56d10-a834-4661-a356-c2b994d4085f",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Validation of unregistered email\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.eql(\"This email is not registered with us\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "729f95bf-aa40-464e-b807-50a3b53f2e23",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"email\": \"pappy@yopmail.com\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/GenerateEmailConfirmationToken"
+											},
+											"response": [
+												{
+													"id": "1d4bc157-511c-4edb-91ef-da06987aebb3",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/GenerateEmailConfirmationToken"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "GenerateEmailConfirmationToken-RegisteredEmail",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "94c28311-ad82-4610-b052-2ea33b8706e5",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Message is 'Token generated successfully.'\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.eql(\"Token generated successfully.\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Token exists in response data\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.data).to.have.property(\"token\");\r",
+															"    pm.expect(jsonData.data.token).to.be.a(\"string\").and.not.empty;\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "17a58f57-54f7-404f-83db-28e24b39e394",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"email\": \"baby@mailinator.com\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/GenerateEmailConfirmationToken"
+											},
+											"response": [
+												{
+													"id": "065f49fa-6c98-44b8-8e13-e99640ee8efa",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/GenerateEmailConfirmationToken"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										}
+									],
+									"id": "1ef8cf72-7335-44d6-a3bb-a6c582d4f305"
+								},
+								{
+									"name": "GeneratePasswordResetConfirmationToken",
+									"item": [
+										{
+											"name": "GeneratePasswordResetConfirmationToken-ValidEmail",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "bd66fd5c-0aba-421a-a9b6-a76f8dfc7ef3",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response indicates reset email sent\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.include(\"Password reset code sent\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "0fc3116e-67f1-4559-861d-d7a3d2e4266e",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"mummy@yopmail.com\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/GeneratePasswordResetConfirmationToken"
+											},
+											"response": [
+												{
+													"id": "41688683-4b40-48f3-8888-8118780882d7",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/GeneratePasswordResetConfirmationToken"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "GeneratePasswordResetConfirmationToken-InvalidEmail",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "559960ad-c9f9-43d6-9fcb-d266cefcce3b",
+														"exec": [
+															"pm.test(\"Status code is 404\", function () {\r",
+															"    pm.response.to.have.status(404);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Validate error message for invalid email format\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.include(\"Account record not found\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "e87dbe90-07ca-4006-8d8d-98adf8b32356",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"email\": \"mummy @yopmail.com\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/GeneratePasswordResetConfirmationToken"
+											},
+											"response": [
+												{
+													"id": "476ca43b-4e43-4b45-892d-2f466e07d8e7",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/GeneratePasswordResetConfirmationToken"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "GeneratePasswordResetConfirmationToken-UnregisteredUser",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "a230d440-4b1d-4f83-ac05-771bda10f07e",
+														"exec": [
+															"pm.test(\"Status code is 404\", function () {\r",
+															"    pm.response.to.have.status(404);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Validate error message for invalid email format\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.include(\"Account record not found\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "90353165-600f-4c04-baa5-bfa6c4284b6a",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"email\": \"dele@yopmail.com\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/GeneratePasswordResetConfirmationToken"
+											},
+											"response": [
+												{
+													"id": "4aeef86f-3615-4a96-8a77-60b044739173",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/GeneratePasswordResetConfirmationToken"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										}
+									],
+									"id": "a27f1e8e-c84c-4d42-83d2-e3537dbd4702"
+								},
+								{
+									"name": "ConfirmEmailAddress",
+									"item": [
+										{
+											"name": "ConfirmEmailAddress-Invalid OTP",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "e3fc798c-c506-4abd-bae5-545c56ba5ab7",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Invalid OTP error message\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.eql(\"Invalid OTP code\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "24b91ab3-893a-435d-9d6e-58b9e4512683",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"baby@mailinator.com\",\n  \"code\": \"76iio\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ConfirmEmailAddress"
+											},
+											"response": [
+												{
+													"id": "87ab09b3-8cda-4c4f-bd68-0eed7b5f464a",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"code\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ConfirmEmailAddress"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "ConfirmEmailAddress-No OTP",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "749f8b18-5be0-4753-a083-9b9091a582bd",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Missing OTP error message\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.eql(\"OTP is required\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "703bd0ae-9781-42a1-af29-43ddcddd4cdb",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"baby@mailinator.com\",\n  \"code\": \"\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ConfirmEmailAddress"
+											},
+											"response": [
+												{
+													"id": "949d9da0-f8df-4b7e-b2ed-6479dc089f33",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"code\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ConfirmEmailAddress"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "ConfirmEmailAddress-No Email",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "a08f9a21-4390-4abe-8c95-352460bc8454",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response title is 'One or more validation errors occurred.'\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.title).to.eql(\"One or more validation errors occurred.\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Correct error messages for missing email\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.errors).to.have.property(\"Email\");\r",
+															"    pm.expect(jsonData.errors.Email).to.include(\"The Email field is required.\");\r",
+															"    pm.expect(jsonData.errors.Email).to.include(\"The Email field is not a valid e-mail address.\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "bce836b5-c373-4436-8ac0-288039239287",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"\",\n  \"code\": \"8200\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ConfirmEmailAddress"
+											},
+											"response": [
+												{
+													"id": "a2ca9545-c488-45db-aacd-d7b6c2b23dac",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"code\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ConfirmEmailAddress"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "ConfirmEmailAddress-Invalid Email",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "69ce2651-9c05-459b-bfef-b68380bb1961",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response title is 'One or more validation errors occurred.'\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.title).to.eql(\"One or more validation errors occurred.\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Correct error message for invalid email format\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.errors).to.have.property(\"Email\");\r",
+															"    pm.expect(jsonData.errors.Email).to.include(\"The Email field is not a valid e-mail address.\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "a5b8873f-d1eb-4f37-b725-f2874bb04b70",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"@@mailinator.com\",\n  \"code\": \"8200\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ConfirmEmailAddress"
+											},
+											"response": [
+												{
+													"id": "b85b40f3-6172-4060-9fce-85186000be12",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"code\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ConfirmEmailAddress"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "ConfirmEmailAddress-CharacterCheckinOTP",
+											"id": "243af8e9-02fc-44a3-99bf-fc156d6cddb8",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<email>\",\n  \"code\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ConfirmEmailAddress"
+											},
+											"response": [
+												{
+													"id": "77998ef1-e5d0-4c80-9b41-b11d961d0486",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"code\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ConfirmEmailAddress"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "ConfirmEmailAddress-ExpiredToken",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "e04e63c1-f588-4e79-8cc6-f77be5270268",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Validate response message for OTP'\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.eql(\"OTP has expired. Please generate a new one\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "16207532-4832-4ad7-abd7-a71045787bfd",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"email\": \"baby@mailinator.com\",\r\n  \"code\": \"8200\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ConfirmEmailAddress"
+											},
+											"response": [
+												{
+													"id": "a09c1c1e-5353-49c8-8705-ba243248b310",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"code\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ConfirmEmailAddress"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "ConfirmEmailAddress-ValidDetails",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "0fcdf3cc-d1a2-4cad-8f85-3e1b7a75adf5",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Email confirmation successful\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.eql(\"Email confirmed successfully\");\r",
+															"    pm.expect(jsonData.status).to.eql(\"success\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "b34d97b0-ae4d-4391-a868-1cdf988e3b26",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"daddy@mailinator.com\",\n  \"code\": \"3685\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ConfirmEmailAddress"
+											},
+											"response": [
+												{
+													"id": "1f3e613a-7b9d-4da2-ba14-4a86d9cb1826",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"code\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ConfirmEmailAddress"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										}
+									],
+									"id": "46504dd7-97ba-4eac-becf-827b3d10df33"
+								},
+								{
+									"name": "ConfirmPasswordResetToken",
+									"item": [
+										{
+											"name": "ConfirmPasswordResetToken-ExpiredOTP",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "7aed872d-d295-4b65-aec9-4dc0c1f2b19d",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"ExpiredOTP validation for ConfirmPasswordResetToken\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.include(\"OTP has expired. Please generate a new one\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "9f7e6054-77ca-4a30-aba3-cc697a1121bd",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"mummy@yopmail.com\",\n  \"code\": \"1347\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ConfirmPasswordResetToken"
+											},
+											"response": [
+												{
+													"id": "44a0b972-51dd-44c2-a49f-1a8d96dfb977",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"code\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ConfirmPasswordResetToken"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "ConfirmPasswordResetToken-InvalidOTP",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "37ee4f29-d137-4960-a89d-8e819924ddf8",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"InavlidOTP validation on ConfirmPasswordResetToken\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.include(\"Invalid OTP code\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "cda7b48d-5fec-4974-b861-b2816567592c",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"pappy@yopmail.com\",\n  \"code\": \"0998900\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ConfirmPasswordResetToken"
+											},
+											"response": [
+												{
+													"id": "6b51b5d9-031c-4a2c-955c-365993062248",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"code\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ConfirmPasswordResetToken"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "ConfirmPasswordResetToken-InvalidEmail",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "3500ce31-33ef-4ccb-b994-f8823f59ce06",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"InavliEmail validation on ConfirmPasswordResetToken\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.include(\"Invalid email\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "e1d05344-8071-4e99-8a7f-5991ee3da30c",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"email\": \"##@yopmail.com\",\r\n  \"code\": \"\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ConfirmPasswordResetToken"
+											},
+											"response": [
+												{
+													"id": "e3b1c636-98f0-49ea-9147-7ab180c5728d",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"code\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ConfirmPasswordResetToken"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										}
+									],
+									"id": "39092deb-5d65-4e57-8a57-b7bc7ecbb6cc"
+								},
+								{
+									"name": "ResetPassword",
+									"item": [
+										{
+											"name": "ResetPassword-Emptyfields",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "8af2dc99-3e67-4777-924e-25d81497897f",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"ResetPassword validation with empty fields\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.title).to.include(\"One or more validation errors occurred.\");\r",
+															"    pm.expect(jsonData.errors.Email).to.include(\r",
+															"            \"The Email field is required.\",\r",
+															"            \"The Email field is not a valid e-mail address.\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "84d4369d-a588-4808-9173-1bf68c8765a7",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"\",\n  \"password\": \"\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ResetPassword"
+											},
+											"response": [
+												{
+													"id": "0bf0b219-5b64-43ea-abc5-4ad9d3baaff5",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"password\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ResetPassword"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "ResetPassword-PasswordComplexityCheck",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "29dcdada-9d21-485f-88a8-8a2690332ca4",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Password complexity check for change password\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.eql(\"Password does not meet complexity requirements.\");\r",
+															"    pm.expect(jsonData.errors.password).to.include(\"Password must contain uppercase, lowercase and specialand numeric characters.\");\r",
+															"    pm.expect(jsonData.errors.password).to.include(\"Password ms contain at least 8 characters\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "8190bab1-d19e-447d-afbf-d69f98501156",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"mummy@yopmail.com\",\n  \"password\": \"enercto33\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ResetPassword"
+											},
+											"response": [
+												{
+													"id": "9cdc3029-136f-4ae9-9078-dfaeeb3f101d",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"password\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ResetPassword"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "ResetPassword-NoPasswordinEmailNotificaion",
+											"id": "3d5916e0-ccae-4168-9c5f-dfa72e0205fc",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"pappy@yopmail.com\",\n  \"password\": \"\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ResetPassword"
+											},
+											"response": [
+												{
+													"id": "ffc513ed-c5c0-4449-bf5b-6eef07532ca4",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"password\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ResetPassword"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "ResetPassword-Unregistered Email",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "0b5c1b82-341f-4423-9860-e577bae0143e",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Error message for email not registered\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.eql(\"This email is not registered with us\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "434a0a29-bac6-4561-b31b-d5d8af229792",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"dance@mailinator.com\",\n  \"password\": \"@#SDDDDS\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ResetPassword"
+											},
+											"response": [
+												{
+													"id": "4e983fcb-9799-4d76-9a11-acdcc34b8107",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"password\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ResetPassword"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "ResetPassword-ValidDetails",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "071c1e2d-2b26-48bf-a34e-12d43b679ec3",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Password complexity error message for uppercase and lowercase\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.eql(\"Password does not meet complexity requirements.\");\r",
+															"    pm.expect(jsonData.errors.password).to.include(\"Password must contain both uppercase and lowercase characters.\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Password complexity error message for special character\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.eql(\"Password does not meet complexity requirements.\");\r",
+															"    pm.expect(jsonData.errors.password).to.include(\"Password must include at least one special character.\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Password complexity error message\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.eql(\"Password does not meet complexity requirements.\");\r",
+															"    pm.expect(jsonData.errors.password).to.include(\"Password must be at least 8 characters long.\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "2f4daf8d-67b3-4b96-ab7a-42cf424148b1",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"email\": \"mummy@yopmail.com\",\r\n  \"password\": \"damilola_098@\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ConfirmEmailAddress"
+											},
+											"response": [
+												{
+													"id": "dd727527-53fb-4a75-a449-259581296a89",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"password\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ResetPassword"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										}
+									],
+									"id": "9a613fcc-f3e8-496d-be8d-cd656656e71b"
+								},
+								{
+									"name": "SignIn",
+									"item": [
+										{
+											"name": "SignIn-Valid details",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "281239de-5442-4036-81ce-1ee93fba7c45",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains token\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData).to.have.property(\"token\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains user details\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.user).to.have.property(\"email\", \"user@example.com\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "f1172fa8-9d5c-464b-8a81-b61268cb72f6",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"mummy@yopmail.com\",\n  \"password\": \"damilola_098@\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/SignIn"
+											},
+											"response": [
+												{
+													"id": "0d4738f4-ab65-4a59-a4a8-a4c44dfa4468",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/SignIn"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": {\n    \"dateCreated\": \"<dateTime>\",\n    \"dateModified\": \"<dateTime>\",\n    \"isDeleted\": \"<boolean>\",\n    \"id\": \"<uuid>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"email\": \"<string>\",\n    \"company\": {\n      \"dateCreated\": \"<dateTime>\",\n      \"dateModified\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"companyType\": {\n        \"dateCreated\": \"<dateTime>\",\n        \"dateModified\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"name\": \"<string>\"\n      },\n      \"primaryAddress\": {\n        \"houseNumber\": \"<string>\",\n        \"street\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"country\": \"<string>\"\n      }\n    },\n    \"role\": {\n      \"dateCreated\": \"<dateTime>\",\n      \"dateModified\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"permissions\": [\n        {\n          \"dateCreated\": \"<dateTime>\",\n          \"dateModified\": \"<dateTime>\",\n          \"id\": \"<uuid>\",\n          \"name\": 0\n        },\n        {\n          \"dateCreated\": \"<dateTime>\",\n          \"dateModified\": \"<dateTime>\",\n          \"id\": \"<uuid>\",\n          \"name\": 4\n        }\n      ]\n    },\n    \"lastLogin\": \"<dateTime>\",\n    \"accessToken\": \"<string>\"\n  },\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "SignIn-UnregisteredUser",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "d0b4a983-44dc-41b6-bed5-4f911a22a92e",
+														"exec": [
+															"pm.test(\"Status code is 401\", function () {\r",
+															"    pm.response.to.have.status(401);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"SignIn with unregistered user\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.include(\"Invalid email/password\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "8c939211-e959-4aa3-aac2-609663982c02",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"yummy@yopmail.com\",\n  \"password\": \"09988jgfj\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/SignIn"
+											},
+											"response": [
+												{
+													"id": "9706b45b-49d7-47d3-86fb-818fa925d0af",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/SignIn"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": {\n    \"dateCreated\": \"<dateTime>\",\n    \"dateModified\": \"<dateTime>\",\n    \"isDeleted\": \"<boolean>\",\n    \"id\": \"<uuid>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"email\": \"<string>\",\n    \"company\": {\n      \"dateCreated\": \"<dateTime>\",\n      \"dateModified\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"companyType\": {\n        \"dateCreated\": \"<dateTime>\",\n        \"dateModified\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"name\": \"<string>\"\n      },\n      \"primaryAddress\": {\n        \"houseNumber\": \"<string>\",\n        \"street\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"country\": \"<string>\"\n      }\n    },\n    \"role\": {\n      \"dateCreated\": \"<dateTime>\",\n      \"dateModified\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"permissions\": [\n        {\n          \"dateCreated\": \"<dateTime>\",\n          \"dateModified\": \"<dateTime>\",\n          \"id\": \"<uuid>\",\n          \"name\": 0\n        },\n        {\n          \"dateCreated\": \"<dateTime>\",\n          \"dateModified\": \"<dateTime>\",\n          \"id\": \"<uuid>\",\n          \"name\": 4\n        }\n      ]\n    },\n    \"lastLogin\": \"<dateTime>\",\n    \"accessToken\": \"<string>\"\n  },\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "SignIn-Invalid Email",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "5a71a52d-aadc-4c7d-b95d-775aa539c4e5",
+														"exec": [
+															"pm.test(\"Status code is 401\", function () {\r",
+															"    pm.response.to.have.status(401);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"SignIn with Invalid email\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.include(\"Invalid email/password\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "124d192d-d939-4070-8bd8-3c617fc4cd91",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"@@@yopmail.com\",\n  \"password\": \"j44SU%#tWp\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/SignIn"
+											},
+											"response": [
+												{
+													"id": "b1687815-5f17-44a3-9afc-79a8e45e2e21",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/SignIn"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": {\n    \"dateCreated\": \"<dateTime>\",\n    \"dateModified\": \"<dateTime>\",\n    \"isDeleted\": \"<boolean>\",\n    \"id\": \"<uuid>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"email\": \"<string>\",\n    \"company\": {\n      \"dateCreated\": \"<dateTime>\",\n      \"dateModified\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"companyType\": {\n        \"dateCreated\": \"<dateTime>\",\n        \"dateModified\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"name\": \"<string>\"\n      },\n      \"primaryAddress\": {\n        \"houseNumber\": \"<string>\",\n        \"street\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"country\": \"<string>\"\n      }\n    },\n    \"role\": {\n      \"dateCreated\": \"<dateTime>\",\n      \"dateModified\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"permissions\": [\n        {\n          \"dateCreated\": \"<dateTime>\",\n          \"dateModified\": \"<dateTime>\",\n          \"id\": \"<uuid>\",\n          \"name\": 0\n        },\n        {\n          \"dateCreated\": \"<dateTime>\",\n          \"dateModified\": \"<dateTime>\",\n          \"id\": \"<uuid>\",\n          \"name\": 4\n        }\n      ]\n    },\n    \"lastLogin\": \"<dateTime>\",\n    \"accessToken\": \"<string>\"\n  },\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "SignIn-NoPassword",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "0cc51e23-251c-4cdb-9026-aba7be8bce48",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"var jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Error message for empty password field\", function () {\r",
+															"    pm.expect(jsonData.title).to.equal(\"One or more validation errors occurred.\");\r",
+															"    pm.expect(jsonData.errors.Password).to.be.an(\"array\").that.includes(\"The Password field is required.\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "e348136b-b355-43ab-b53e-1aa4dcfdd531",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"mummy@yopmail.com\",\n  \"password\": \"\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/SignIn"
+											},
+											"response": [
+												{
+													"id": "757be1f2-eea9-4bef-9b82-0495dc872ee3",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/SignIn"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": {\n    \"dateCreated\": \"<dateTime>\",\n    \"dateModified\": \"<dateTime>\",\n    \"isDeleted\": \"<boolean>\",\n    \"id\": \"<uuid>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"email\": \"<string>\",\n    \"company\": {\n      \"dateCreated\": \"<dateTime>\",\n      \"dateModified\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"companyType\": {\n        \"dateCreated\": \"<dateTime>\",\n        \"dateModified\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"name\": \"<string>\"\n      },\n      \"primaryAddress\": {\n        \"houseNumber\": \"<string>\",\n        \"street\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"country\": \"<string>\"\n      }\n    },\n    \"role\": {\n      \"dateCreated\": \"<dateTime>\",\n      \"dateModified\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"permissions\": [\n        {\n          \"dateCreated\": \"<dateTime>\",\n          \"dateModified\": \"<dateTime>\",\n          \"id\": \"<uuid>\",\n          \"name\": 0\n        },\n        {\n          \"dateCreated\": \"<dateTime>\",\n          \"dateModified\": \"<dateTime>\",\n          \"id\": \"<uuid>\",\n          \"name\": 4\n        }\n      ]\n    },\n    \"lastLogin\": \"<dateTime>\",\n    \"accessToken\": \"<string>\"\n  },\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "SignIn-NoEmail",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "d473b532-3720-4f4d-a8dd-e46e0e13f77f",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"var jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Error message for empty email field\", function () {\r",
+															"    pm.expect(jsonData.title).to.equal(\"One or more validation errors occurred.\");\r",
+															"    pm.expect(jsonData.errors.Email).to.be.an(\"array\").that.includes(\"The Email field is required.\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "1bd26e42-5322-4fd0-a9e1-1cdf7b80114c",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"\",\n  \"password\": \"damilola_098@\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/SignIn"
+											},
+											"response": [
+												{
+													"id": "0e111418-fb29-42a9-87b2-448b0d979690",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/SignIn"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": {\n    \"dateCreated\": \"<dateTime>\",\n    \"dateModified\": \"<dateTime>\",\n    \"isDeleted\": \"<boolean>\",\n    \"id\": \"<uuid>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"email\": \"<string>\",\n    \"company\": {\n      \"dateCreated\": \"<dateTime>\",\n      \"dateModified\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"companyType\": {\n        \"dateCreated\": \"<dateTime>\",\n        \"dateModified\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"name\": \"<string>\"\n      },\n      \"primaryAddress\": {\n        \"houseNumber\": \"<string>\",\n        \"street\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"country\": \"<string>\"\n      }\n    },\n    \"role\": {\n      \"dateCreated\": \"<dateTime>\",\n      \"dateModified\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"permissions\": [\n        {\n          \"dateCreated\": \"<dateTime>\",\n          \"dateModified\": \"<dateTime>\",\n          \"id\": \"<uuid>\",\n          \"name\": 0\n        },\n        {\n          \"dateCreated\": \"<dateTime>\",\n          \"dateModified\": \"<dateTime>\",\n          \"id\": \"<uuid>\",\n          \"name\": 4\n        }\n      ]\n    },\n    \"lastLogin\": \"<dateTime>\",\n    \"accessToken\": \"<string>\"\n  },\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										}
+									],
+									"id": "2439af51-345d-4b31-b6d5-b513003bf868"
+								},
+								{
+									"name": "GetCompanyTypes",
+									"item": [
+										{
+											"name": "FetchAllCompanyTypes",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "9443fd21-ff1b-42c2-8dd4-b9d0be0b5e75",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"First item has expected fields\", function () {\r",
+															"    const responseJson = pm.response.json();\r",
+															"    if (responseJson.length > 0) {\r",
+															"        const firstItem = responseJson[0];\r",
+															"        pm.expect(firstItem).to.have.property(\"name\");\r",
+															"        pm.expect(firstItem).to.have.property(\"id\");\r",
+															"        pm.expect(firstItem).to.have.property(\"dateCreated\");\r",
+															"    }\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "eb920dff-8936-48c0-90a7-b19fc86c1457",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": "{{baseUrl}}/api/v1/Authentication/GetCompanyTypes"
+											},
+											"response": [
+												{
+													"id": "2b251ef5-ad1b-4671-aed3-4f39023c22c6",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"url": "{{baseUrl}}/api/v1/Authentication/GetCompanyTypes"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": [\n    {\n      \"dateCreated\": \"<dateTime>\",\n      \"dateModified\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"dateCreated\": \"<dateTime>\",\n      \"dateModified\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										}
+									],
+									"id": "ef5f0606-8e75-49bd-a3fe-a621e5051212"
+								}
+							],
+							"id": "bad1a3e9-c7f9-4c09-b25c-f1f44e37c6a8"
+						}
+					],
+					"id": "d8ab5b3a-d71f-4baf-8dad-99a69b524c3d"
+				}
+			],
+			"id": "be527eef-a9a7-4e7a-86f9-a153d2ded711"
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{accessToken}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1d3180c8-2a06-4d28-8b02-95c531a714a4",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4ee9acaf-d1a7-4a6c-86d8-96e92d62e347",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": ""
+		},
+		{
+			"key": "bus_email",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "phone_number",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "companyTypeId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "accessToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
