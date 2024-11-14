@@ -1926,7 +1926,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"email\": \"mummy@yopmail.com\"\n}",
+													"raw": "{\n  \"email\": \"tea@yopmail.com\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -3540,7 +3540,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"email\": \"dance@mailinator.com\",\n  \"password\": \"@#SDDDDS\"\n}",
+													"raw": "{\n  \"email\": \"tea@yopmail.com\",\n  \"password\": \"P3@x3Tl%Jt\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
