@@ -2779,7 +2779,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"email\": \"dear@mailinator.com\",\n  \"code\": \"5869\"\n}",
+													"raw": "{\n  \"email\": \"eat@mailinator.com\",\n  \"code\": \" 9743\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -4340,7 +4340,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"email\": \"daddy@mailinator.com\",\n  \"name\": \"{{$randomFullName}}\",//\"Studio_66\"\n  \"phoneNumber\": \"{{$randomPhoneNumber}}\",//08074255255\n  \"companyTypeId\": \"{{companyTypeId}}\",//\"43ece7a6-fd74-4f8f-96a4-21af64427426\"\n  \"adminRequest\": {\n    \"email\": \"mummy@yopmail.com\",\n    \"firstName\": \"{{$randomFirstName}}\",//\"Damijo\"\n    \"lastName\": \"{{$randomLastName}}\",//\"Damisi-Damijo\"\n    \"phoneNumber\": \"{{$randomPhoneNumberExt}}\"// \"08087334543\"\n  },\n  \"primaryAddress\": {\n    \"city\": \"Ikeja\",\n    \"houseNumber\": \"11\",\n    \"state\": \"Lagos\",\n    \"street\": \"Falomo\",\n    \"country\": \"Nigeria\"\n  }\n}",
+											"raw": "{\n  \"email\": \"eat@mailinator.com\",\n  \"name\": \"{{$randomFullName}}\",//\"Studio_66\"\n  \"phoneNumber\": \"{{$randomPhoneNumber}}\",//08074255255\n  \"companyTypeId\": \"{{companyTypeId}}\",//\"43ece7a6-fd74-4f8f-96a4-21af64427426\"\n  \"adminRequest\": {\n    \"email\": \"tea@yopmail.com\",\n    \"firstName\": \"{{$randomFirstName}}\",//\"Damijo\"\n    \"lastName\": \"{{$randomLastName}}\",//\"Damisi-Damijo\"\n    \"phoneNumber\": \"{{$randomPhoneNumberExt}}\"// \"08087334543\"\n  },\n  \"primaryAddress\": {\n    \"city\": \"Ikeja\",\n    \"houseNumber\": \"11\",\n    \"state\": \"Lagos\",\n    \"street\": \"Falomo\",\n    \"country\": \"Nigeria\"\n  }\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
