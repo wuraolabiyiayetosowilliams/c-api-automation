@@ -703,7 +703,7 @@
 									"name": "GetPermissions",
 									"item": [
 										{
-											"name": "/api/v1/Authentication/GetPermissions",
+											"name": "GetPermissions-ValidateResponseBody",
 											"id": "667230e5-636e-4002-81d5-362ac002f9ee",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
