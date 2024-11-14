@@ -3135,13 +3135,13 @@
 													"script": {
 														"id": "3500ce31-33ef-4ccb-b994-f8823f59ce06",
 														"exec": [
-															"pm.test(\"Status code is 400\", function () {\r",
-															"    pm.response.to.have.status(400);\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
 															"});\r",
 															"\r",
-															"pm.test(\"InavliEmail validation on ConfirmPasswordResetToken\", function () {\r",
+															"pm.test(\"Validation of valid email and OTP on ConfirmPasswordResetToken\", function () {\r",
 															"    var jsonData = pm.response.json();\r",
-															"    pm.expect(jsonData.message).to.include(\"Invalid email\");\r",
+															"    pm.expect(jsonData.message).to.include(\"Password Reset successfully\");\r",
 															"});"
 														],
 														"type": "text/javascript",
@@ -3158,7 +3158,7 @@
 												"header": [],
 												"body": {
 													"mode": "raw",
-													"raw": "{\r\n  \"email\": \"##@yopmail.com\",\r\n  \"code\": \"\"\r\n}",
+													"raw": "{\r\n  \"email\": \"tea@yopmail.com\",\r\n  \"code\": \"5763\"\r\n}",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -3553,6 +3553,104 @@
 											"response": [
 												{
 													"id": "4e983fcb-9799-4d76-9a11-acdcc34b8107",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"password\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ResetPassword"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "ResetPassword-Registered Email",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "0b5c1b82-341f-4423-9860-e577bae0143e",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Error message for email not registered\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.eql(\"This email is not registered with us\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "ee74102c-8ad9-4e50-8d09-853a3ac588f0",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"tea@yopmail.com\",\n  \"password\": \"@Testing123\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ResetPassword"
+											},
+											"response": [
+												{
+													"id": "9e56f01f-f896-4c77-81eb-4bdeccea5914",
 													"name": "Success",
 													"originalRequest": {
 														"method": "POST",
