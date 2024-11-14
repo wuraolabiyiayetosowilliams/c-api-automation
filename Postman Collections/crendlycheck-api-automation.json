@@ -3126,6 +3126,94 @@
 													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
 												}
 											]
+										},
+										{
+											"name": "ConfirmPasswordResetToken-ValidEmail",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "3500ce31-33ef-4ccb-b994-f8823f59ce06",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"InavliEmail validation on ConfirmPasswordResetToken\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.include(\"Invalid email\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "8533d29d-a14c-4b46-83a1-34d630696f10",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"email\": \"##@yopmail.com\",\r\n  \"code\": \"\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/ConfirmPasswordResetToken"
+											},
+											"response": [
+												{
+													"id": "a4863c7d-bfb7-4cc8-80da-cdd145e455b3",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<email>\",\n  \"code\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/ConfirmPasswordResetToken"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
 										}
 									],
 									"id": "39092deb-5d65-4e57-8a57-b7bc7ecbb6cc"
