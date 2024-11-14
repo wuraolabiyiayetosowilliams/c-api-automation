@@ -704,6 +704,61 @@
 									"item": [
 										{
 											"name": "GetPermissions-ValidateResponseBody",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "cc6f273a-5753-48b3-aa11-ff9e2ae5fe4f",
+														"exec": [
+															"let response = pm.response.json();\r",
+															"\r",
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"\r",
+															"pm.test(\"Response body contains 'data' array\", function () {\r",
+															"    pm.expect(response).to.be.an(\"object\");\r",
+															"    pm.expect(response).to.have.property(\"data\").that.is.an(\"array\");\r",
+															"});\r",
+															"\r",
+															"\r",
+															"response.data.forEach((item, index) => {\r",
+															"    pm.test(`Item ${index + 1}: contains expected fields and data types`, function () {\r",
+															"        pm.expect(item).to.be.an(\"object\");\r",
+															"        pm.expect(item).to.have.property(\"name\").that.is.a(\"string\");\r",
+															"        pm.expect(item).to.have.property(\"id\").that.is.a(\"string\");\r",
+															"        pm.expect(item).to.have.property(\"dateCreated\").that.is.a(\"string\");\r",
+															"        pm.expect(new Date(item.dateCreated)).to.not.be.NaN;\r",
+															"\r",
+															"        pm.expect(item).to.have.property(\"dateModified\");\r",
+															"        if (item.dateModified !== null) {\r",
+															"            pm.expect(item.dateModified).to.match(\r",
+															"                /^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{6})?Z$/\r",
+															"            );\r",
+															"        } else {\r",
+															"            pm.expect(item.dateModified).to.be.null;\r",
+															"        }\r",
+															"    });\r",
+															"\r",
+															"    pm.test(`Item ${index + 1}: checks specific values if applicable`, function () {\r",
+															"        if (item.name === 3) {\r",
+															"            pm.expect(item.id).to.equal(\"51509612-212a-434b-83bc-d56e3ab83c32\");\r",
+															"        } else if (item.name === 0) {\r",
+															"            pm.expect(item.id).to.equal(\"9589cf95-42b2-486c-8056-6cae1e3d8b3e\");\r",
+															"        } else if (item.name === 4) {\r",
+															"            pm.expect(item.id).to.equal(\"ec522b97-4877-4d16-8244-2ea029d060db\");\r",
+															"        }\r",
+															"    });\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "667230e5-636e-4002-81d5-362ac002f9ee",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -714,6 +769,12 @@
 													{
 														"key": "Accept",
 														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiNzZhYjc4MmQtZGE3OS00ZjQ3LTg5Y2YtNzQyODU1MzhiZWY5IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiIzMTYxOTIzNy05NDk1LTRhZWMtYWE3Yi04NTcwNTczNjc1Y2IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJbXSIsImV4cCI6MTczMTc0NDMyMywiaXNzIjoiKiIsImF1ZCI6IioifQ.7CqUKO4YwD6F9JumHZH5VfsgXOCRpsAa4BuknDT3vHA",
+														"type": "text",
+														"disabled": true
 													}
 												],
 												"url": "{{baseUrl}}/api/v1/Authentication/GetPermissions"
