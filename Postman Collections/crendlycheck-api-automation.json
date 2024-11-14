@@ -703,7 +703,7 @@
 									"name": "GetPermissions",
 									"item": [
 										{
-											"name": "GetPermissions-ValidateResponseBody",
+											"name": "FetchPermissions-ValidateResponseBody",
 											"event": [
 												{
 													"listen": "test",
@@ -820,7 +820,7 @@
 									"name": "GetRoles",
 									"item": [
 										{
-											"name": "/api/v1/Authentication/GetRoles",
+											"name": "FetchRoles",
 											"id": "84ae4144-2ee5-4064-a22e-1038f37e4e06",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
