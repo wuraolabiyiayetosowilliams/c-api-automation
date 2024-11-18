@@ -1193,7 +1193,7 @@
 											]
 										},
 										{
-											"name": "AddRole-No permissionID Copy",
+											"name": "AddRole-Valid name and persmissionID",
 											"event": [
 												{
 													"listen": "test",
