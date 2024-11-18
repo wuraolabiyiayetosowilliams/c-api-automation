@@ -1200,6 +1200,104 @@
 													"script": {
 														"id": "753a1c80-6ac7-4042-8eed-1b095bcc68eb",
 														"exec": [
+															"pm.test(\"Status Code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains response title\", function () {\r",
+															"    pm.expect(pm.response.json().message).to.equal(\"Role created successfully\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "d96ec554-38bb-42d3-a1f4-ae94c3ddadc9",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"Finance\",\n  \"permissionId\": [\n    \"39b84296-1725-47c4-aca9-2b6cbcb9cdbb\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/CreateRole"
+											},
+											"response": [
+												{
+													"id": "390700f6-2b7b-4d22-abbc-489ee9024943",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"<string>\",\n  \"permissionId\": [\n    \"<uuid>\"\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/CreateRole"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "AddRole-Dupliate name and persmissionID",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "753a1c80-6ac7-4042-8eed-1b095bcc68eb",
+														"exec": [
 															"pm.test(\"Status Code is 400\", function () {\r",
 															"    pm.response.to.have.status(400);\r",
 															"});\r",
@@ -1218,7 +1316,7 @@
 													}
 												}
 											],
-											"id": "d96ec554-38bb-42d3-a1f4-ae94c3ddadc9",
+											"id": "7dc715f4-a7b2-4396-b01f-278bc4905561",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
 											},
@@ -1248,7 +1346,7 @@
 											},
 											"response": [
 												{
-													"id": "390700f6-2b7b-4d22-abbc-489ee9024943",
+													"id": "b676aaad-f1ce-4b57-94f0-7a654b16e713",
 													"name": "Success",
 													"originalRequest": {
 														"method": "POST",
