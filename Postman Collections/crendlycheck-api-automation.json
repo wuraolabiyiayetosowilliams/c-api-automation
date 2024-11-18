@@ -1077,7 +1077,7 @@
 									"name": "CreateUser",
 									"item": [
 										{
-											"name": "/api/v1/Authentication/CreateUser",
+											"name": "AddUser-InvalidDetails",
 											"id": "8b978774-56eb-4feb-a499-44b353cd7013",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
