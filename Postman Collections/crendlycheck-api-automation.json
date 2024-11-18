@@ -1496,6 +1496,26 @@
 									"item": [
 										{
 											"name": "AddUser-InvalidDetails",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "66678aec-c493-4fce-a4f7-dd9a44075388",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"AddUser with Invalid email\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.include(\"Invalid email/password\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "8b978774-56eb-4feb-a499-44b353cd7013",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1514,7 +1534,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"roleId\": \"<uuid>\"\n}",
+													"raw": "{\n  \"email\": \"@mailinator.com\",\n  \"firstName\": \"Wager023\",\n  \"lastName\": \"Danser04\",\n  \"phoneNumber\": \"091234543345\",\n  \"roleId\": \"\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
