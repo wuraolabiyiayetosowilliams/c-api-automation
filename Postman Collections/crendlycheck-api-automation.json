@@ -1102,8 +1102,12 @@
 															"    pm.response.to.have.status(400);\r",
 															"});\r",
 															"\r",
-															"pm.test(\"No Name Field Validation Error\", function () {\r",
-															"    pm.expect(pm.response.json().errors.Name[0]).to.equal(\"The Name field is required.\");\r",
+															"pm.test(\"No permissionId field Validation Error\", function () {\r",
+															"    pm.expect(pm.response.json().errors.permissionId[0]).to.equal(\"The PermissionId field is required.\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains error message\", function () {\r",
+															"    pm.expect(pm.response.json().title).to.equal(\"One or more validation errors\");\r",
 															"});\r",
 															""
 														],
@@ -1130,7 +1134,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"name\": \"\",\n  \"permissionId\": [\n    \"34755014-50a4-4cbc-8553-8cf97de29dac\"\n  ]\n}",
+													"raw": "{\n  \"name\": \"Super Admin\",\n  \"permissionId\": [\n    \"\"\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
