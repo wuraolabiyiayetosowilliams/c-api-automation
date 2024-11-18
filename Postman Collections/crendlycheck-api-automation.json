@@ -1302,13 +1302,10 @@
 															"    pm.response.to.have.status(400);\r",
 															"});\r",
 															"\r",
-															"pm.test(\"No permissionId field Validation Error\", function () {\r",
-															"    pm.expect(pm.response.json().errors['$.permissionId'][0]).to.equal(\"The PermissionId field is required.\");\r",
+															"pm.test(\"Duplicate name and permissionID validation\", function () {\r",
+															"    pm.expect(pm.response.json().message).to.equal(\"'Name' already exist.\");\r",
 															"});\r",
 															"\r",
-															"pm.test(\"Response contains response title\", function () {\r",
-															"    pm.expect(pm.response.json().title).to.equal(\"One or more validation errors occurred.\");\r",
-															"});\r",
 															""
 														],
 														"type": "text/javascript",
@@ -1334,7 +1331,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"name\": \"Super Admin\",\n  \"permissionId\": [\n    \"\"\n  ]\n}",
+													"raw": "{\n  \"name\": \"Super Admin\",\n  \"permissionId\": [\n    \"39b84296-1725-47c4-aca9-2b6cbcb9cdbb\"\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
