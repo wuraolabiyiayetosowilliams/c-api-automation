@@ -2189,7 +2189,7 @@
 											]
 										},
 										{
-											"name": "AddUser-ValidDetails Copy",
+											"name": "AddUser-DuplicateEmail",
 											"event": [
 												{
 													"listen": "test",
@@ -2200,9 +2200,9 @@
 															"    pm.response.to.have.status(400);\r",
 															"});\r",
 															"\r",
-															"pm.test(\"AddUser with Invalid email\", function () {\r",
+															"pm.test(\"AddUser with duplicate email\", function () {\r",
 															"    var jsonData = pm.response.json();\r",
-															"    pm.expect(jsonData.message).to.include(\"Invalid email/password\");\r",
+															"    pm.expect(jsonData.message).to.include(\"'Email Address' already exist.\");\r",
 															"});"
 														],
 														"type": "text/javascript",
