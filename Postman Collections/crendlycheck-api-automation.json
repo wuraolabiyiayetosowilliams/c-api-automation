@@ -619,7 +619,7 @@
 									"name": "AddKycDocuments",
 									"item": [
 										{
-											"name": "AddKYC-NoUrlProvided",
+											"name": "AddKYC-NoDocProvided",
 											"id": "fc9920a8-2304-45b8-973f-a49824f240bd",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
