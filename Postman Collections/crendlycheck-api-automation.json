@@ -1888,7 +1888,7 @@
 											]
 										},
 										{
-											"name": "AddRole-InvalidroleID",
+											"name": "AddRole-InvalidpermissionID",
 											"event": [
 												{
 													"listen": "test",
@@ -2246,6 +2246,104 @@
 											"response": [
 												{
 													"id": "e8a1f8f2-3c67-492b-891b-0b8879497624",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"roleId\": \"<uuid>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/CreateUser"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "AddUser-DuplicatePhoneNumber",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "66678aec-c493-4fce-a4f7-dd9a44075388",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"AddUser with duplicate email\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.message).to.include(\"'Email Address' already exist.\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "5f3f5b11-4143-4383-8cac-9117d5dedaf0",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"may@mailinator.com\",\n  \"firstName\": \"Damilola\",\n  \"lastName\": \"Sandra\",\n  \"phoneNumber\": \"09134543345\",\n  \"roleId\": \"01d28f8f-f7b2-4ea1-98c2-6336034ce9c9\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/CreateUser"
+											},
+											"response": [
+												{
+													"id": "74431e21-753c-4fb7-800a-bbe8f2bb54b9",
 													"name": "Success",
 													"originalRequest": {
 														"method": "POST",
