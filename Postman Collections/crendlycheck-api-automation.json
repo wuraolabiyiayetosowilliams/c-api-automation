@@ -1151,6 +1151,26 @@
 											"item": [
 												{
 													"name": "FetchRole-NoID",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "8e0fac69-c45e-4d0a-9043-bc8220db3f89",
+																"exec": [
+																	"pm.test(\"Status code is 404\", function () {\r",
+																	"    pm.response.to.have.status(404);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response body is empty\", function () {\r",
+																	"    pm.expect(pm.response.text()).to.be.empty;\r",
+																	"});\r",
+																	""
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "d84c4e22-070c-42e2-9410-94a5f3998ae6",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
@@ -1177,7 +1197,6 @@
 															],
 															"variable": [
 																{
-																	"id": "9e9698d1-9165-4f6b-ad66-62ca27804a3b",
 																	"key": "roleId",
 																	"value": "<uuid>",
 																	"description": "(Required) "
@@ -1188,6 +1207,113 @@
 													"response": [
 														{
 															"id": "cce842e2-39ac-46a5-9fe4-ea39de87cfe8",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "text/plain"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "Authorization",
+																		"value": "<API Key>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/Authentication/GetRole/:roleId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"Authentication",
+																		"GetRole",
+																		":roleId"
+																	],
+																	"variable": [
+																		{
+																			"key": "roleId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": {\n    \"dateCreated\": \"<dateTime>\",\n    \"dateModified\": \"<dateTime>\",\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"permissions\": [\n      {\n        \"dateCreated\": \"<dateTime>\",\n        \"dateModified\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"name\": 2\n      },\n      {\n        \"dateCreated\": \"<dateTime>\",\n        \"dateModified\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"name\": 4\n      }\n    ]\n  },\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+														}
+													]
+												},
+												{
+													"name": "FetchRole-NoID Copy",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "8e0fac69-c45e-4d0a-9043-bc8220db3f89",
+																"exec": [
+																	"pm.test(\"Status code is 404\", function () {\r",
+																	"    pm.response.to.have.status(404);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response body is empty\", function () {\r",
+																	"    pm.expect(pm.response.text()).to.be.empty;\r",
+																	"});\r",
+																	""
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "2b3d07f5-ddd9-49ac-a6d5-81b74f312564",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/Authentication/GetRole/:roleId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"Authentication",
+																"GetRole",
+																":roleId"
+															],
+															"variable": [
+																{
+																	"id": "78bcfa79-2fe2-4fe4-9871-b425348983b5",
+																	"key": "roleId",
+																	"value": "<uuid>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "a1ce1d09-eaf2-43d0-be9a-4e6dcceb7a0a",
 															"name": "Success",
 															"originalRequest": {
 																"method": "GET",
