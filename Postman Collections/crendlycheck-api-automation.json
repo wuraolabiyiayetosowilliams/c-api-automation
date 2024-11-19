@@ -1232,7 +1232,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"name\": \"Finance\",\n  \"permissionId\": [\n    \"39b84296-1725-47c4-aca9-2b6cbcb9cdbb\"\n  ]\n}",
+													"raw": "{\n  \"name\": \"Reviewer\",\n  \"permissionId\": [\n    \"ec522b97-4877-4d16-8244-2ea029d060db\"\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
