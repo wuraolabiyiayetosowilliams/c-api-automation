@@ -1888,7 +1888,7 @@
 											]
 										},
 										{
-											"name": "AddRole-Invalid persmissionID",
+											"name": "AddRole-InvalidroleID",
 											"event": [
 												{
 													"listen": "test",
@@ -2135,7 +2135,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"email\": \"may@mailinator.com\",\n  \"firstName\": \"Damilola\",\n  \"lastName\": \"Sandra\",\n  \"phoneNumber\": \"09134543345\",\n  \"roleId\": \"01d28f8f-f7b2-4ea1-98c2-6336034ce9c9\"\n}",
+													"raw": "{\n  \"email\": \"army@mailinator.com\",\n  \"firstName\": \"Damola\",\n  \"lastName\": \"Damola\",\n  \"phoneNumber\": \"09178543345\",\n  \"roleId\": \"01d28f8f-f7b2-4ea1-98c2-6336034ce9c9\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
