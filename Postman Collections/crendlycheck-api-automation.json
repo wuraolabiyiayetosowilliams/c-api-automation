@@ -4907,34 +4907,50 @@
 			"id": "be527eef-a9a7-4e7a-86f9-a153d2ded711"
 		},
 		{
-			"name": "https://crendlycheck-sandbox.azurewebsites.net/api/v1/Authentication/SignIn",
-			"id": "b9693e4a-2672-454d-aaf8-b45889daa943",
+			"name": "https://crendlycheck-sandbox.azurewebsites.net/api/v1/Authentication/GetRoles?PageSize=1&PageNumber=1&SearchString=%7B%7D",
+			"id": "5ea27f86-be15-4a99-9409-54b8364e029f",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "POST",
+				"method": "GET",
 				"header": [
 					{
 						"key": "accept",
 						"value": "text/plain"
 					},
 					{
-						"key": "Content-Type",
-						"value": "application/json"
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiNzZhYjc4MmQtZGE3OS00ZjQ3LTg5Y2YtNzQyODU1MzhiZWY5IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiIzMTYxOTIzNy05NDk1LTRhZWMtYWE3Yi04NTcwNTczNjc1Y2IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJbXCJDYW5DcmVhdGVVc2VyXCIsXCJDYW5DcmVhdGVSb2xlXCIsXCJDYW5WaWV3Um9sZVwiLFwiQ2FuVmlld0Rhc2hib2FyZFwiLFwiQ2FuRWRpdFVzZXJcIl0iLCJleHAiOjE3MzIxODU0OTIsImlzcyI6IioiLCJhdWQiOiIqIn0.OpRuYtzdazwWu3S9Hb_9Dbau8PhDxvOHeDpcOn49ZL4"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"email\": \"tea@yopmail.com\",\r\n  \"password\": \"@Testing123\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/Authentication/GetRoles?PageSize=2&PageNumber=2&SearchString=",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Authentication",
+						"GetRoles"
+					],
+					"query": [
+						{
+							"key": "PageSize",
+							"value": "2"
+						},
+						{
+							"key": "PageNumber",
+							"value": "2"
+						},
+						{
+							"key": "SearchString",
+							"value": ""
 						}
-					}
+					]
 				},
-				"url": "https://crendlycheck-sandbox.azurewebsites.net/api/v1/Authentication/SignIn",
-				"description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://crendlycheck-sandbox.azurewebsites.net/api/v1/Authentication/SignIn' \\\r\n  -H 'accept: text/plain' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"email\": \"tea@yopmail.com\",\r\n  \"password\": \"@Testing123\"\r\n}'"
+				"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://crendlycheck-sandbox.azurewebsites.net/api/v1/Authentication/GetRoles?PageSize=1&PageNumber=1&SearchString=%7B%7D' \\\r\n  -H 'accept: text/plain' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiNzZhYjc4MmQtZGE3OS00ZjQ3LTg5Y2YtNzQyODU1MzhiZWY5IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiIzMTYxOTIzNy05NDk1LTRhZWMtYWE3Yi04NTcwNTczNjc1Y2IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJbXCJDYW5DcmVhdGVVc2VyXCIsXCJDYW5DcmVhdGVSb2xlXCIsXCJDYW5WaWV3Um9sZVwiLFwiQ2FuVmlld0Rhc2hib2FyZFwiLFwiQ2FuRWRpdFVzZXJcIl0iLCJleHAiOjE3MzIxODU0OTIsImlzcyI6IioiLCJhdWQiOiIqIn0.OpRuYtzdazwWu3S9Hb_9Dbau8PhDxvOHeDpcOn49ZL4'"
 			},
 			"response": []
 		}
