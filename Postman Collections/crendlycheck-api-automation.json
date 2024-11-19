@@ -1264,11 +1264,11 @@
 																"id": "8e0fac69-c45e-4d0a-9043-bc8220db3f89",
 																"exec": [
 																	"pm.test(\"Status code is 404\", function () {\r",
-																	"    pm.response.to.have.status(404);\r",
+																	"    pm.response.to.have.status(200);\r",
 																	"});\r",
 																	"\r",
-																	"pm.test(\"Response body is empty\", function () {\r",
-																	"    pm.expect(pm.response.text()).to.be.empty;\r",
+																	"pm.test(\"Response body is not empty\", function () {\r",
+																	"    pm.expect(pm.response.text()).to.be.not.empty;\r",
 																	"});\r",
 																	""
 																],
@@ -1290,7 +1290,7 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/v1/Authentication/GetRole/:roleId",
+															"raw": "{{baseUrl}}/api/v1/Authentication/GetRole/:roleId?roleId=8d0cbf9d-08d5-4087-9197-b1e5933650f1",
 															"host": [
 																"{{baseUrl}}"
 															],
@@ -1301,11 +1301,17 @@
 																"GetRole",
 																":roleId"
 															],
+															"query": [
+																{
+																	"key": "roleId",
+																	"value": "8d0cbf9d-08d5-4087-9197-b1e5933650f1",
+																	"type": "text"
+																}
+															],
 															"variable": [
 																{
-																	"id": "78bcfa79-2fe2-4fe4-9871-b425348983b5",
 																	"key": "roleId",
-																	"value": "<uuid>",
+																	"value": "<9589cf95-42b2-486c-8056-6cae1e3d8b3e>",
 																	"description": "(Required) "
 																}
 															]
