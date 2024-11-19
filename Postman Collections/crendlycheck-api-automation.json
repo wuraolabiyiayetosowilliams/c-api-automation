@@ -2006,7 +2006,12 @@
 															"\r",
 															"pm.test(\"AddUser with Invalid email\", function () {\r",
 															"    var jsonData = pm.response.json();\r",
-															"    pm.expect(jsonData.message).to.include(\"Invalid email/password\");\r",
+															"    pm.expect(jsonData.error.Email).to.include(\"Invalid email\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"AddUser with Invalid email\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.error.firstName).to.include(\"Only text is allowed\");\r",
 															"});"
 														],
 														"type": "text/javascript",
