@@ -868,7 +868,7 @@
 											"response": []
 										},
 										{
-											"name": "FetchRoles-EmptyValues",
+											"name": "FetchRoles-QueryParamsnotSelected",
 											"event": [
 												{
 													"listen": "test",
@@ -920,6 +920,107 @@
 												}
 											],
 											"id": "4db26369-7e1e-4f15-81b9-01ab02922a88",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiNzZhYjc4MmQtZGE3OS00ZjQ3LTg5Y2YtNzQyODU1MzhiZWY5IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiIzMTYxOTIzNy05NDk1LTRhZWMtYWE3Yi04NTcwNTczNjc1Y2IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJbXCJDYW5DcmVhdGVVc2VyXCIsXCJDYW5DcmVhdGVSb2xlXCIsXCJDYW5WaWV3Um9sZVwiLFwiQ2FuVmlld0Rhc2hib2FyZFwiLFwiQ2FuRWRpdFVzZXJcIl0iLCJleHAiOjE3MzIxODU0OTIsImlzcyI6IioiLCJhdWQiOiIqIn0.OpRuYtzdazwWu3S9Hb_9Dbau8PhDxvOHeDpcOn49ZL4"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/Authentication/GetRoles",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"Authentication",
+														"GetRoles"
+													],
+													"query": [
+														{
+															"key": "PageSize",
+															"value": "",
+															"disabled": true
+														},
+														{
+															"key": "PageNumber",
+															"value": "",
+															"disabled": true
+														},
+														{
+															"key": "SearchString",
+															"value": "",
+															"disabled": true
+														}
+													]
+												},
+												"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://crendlycheck-sandbox.azurewebsites.net/api/v1/Authentication/GetRoles?PageSize=1&PageNumber=1&SearchString=%7B%7D' \\\r\n  -H 'accept: text/plain' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiNzZhYjc4MmQtZGE3OS00ZjQ3LTg5Y2YtNzQyODU1MzhiZWY5IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiIzMTYxOTIzNy05NDk1LTRhZWMtYWE3Yi04NTcwNTczNjc1Y2IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJbXCJDYW5DcmVhdGVVc2VyXCIsXCJDYW5DcmVhdGVSb2xlXCIsXCJDYW5WaWV3Um9sZVwiLFwiQ2FuVmlld0Rhc2hib2FyZFwiLFwiQ2FuRWRpdFVzZXJcIl0iLCJleHAiOjE3MzIxODU0OTIsImlzcyI6IioiLCJhdWQiOiIqIn0.OpRuYtzdazwWu3S9Hb_9Dbau8PhDxvOHeDpcOn49ZL4'"
+											},
+											"response": []
+										},
+										{
+											"name": "FetchRoles-NoPageSizeandNo",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "860a87bd-2323-4241-a268-cb556cc51ac9",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response structure is valid\", function () {\r",
+															"    const jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData).to.have.property(\"status\", true);\r",
+															"    pm.expect(jsonData).to.have.property(\"message\", \"Operation completed successfully\");\r",
+															"    pm.expect(jsonData).to.have.property(\"data\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Count matches roles array length\", function () {\r",
+															"    const jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.data.count).to.equal(jsonData.data.data.length);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Page number is correct\", function () {\r",
+															"    const jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.data).to.have.property(\"pageNumber\", 1);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Each role has required fields\", function () {\r",
+															"    const roles = pm.response.json().data.data;\r",
+															"    roles.forEach(role => {\r",
+															"        pm.expect(role).to.have.property(\"name\").that.is.a(\"string\");\r",
+															"        pm.expect(role).to.have.property(\"id\").that.is.a(\"string\");\r",
+															"        pm.expect(role).to.have.property(\"dateCreated\").that.is.a(\"string\");\r",
+															"        pm.expect(role).to.have.property(\"dateModified\");\r",
+															"    });\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Roles contain specific entries\", function () {\r",
+															"    const roles = pm.response.json().data.data.map(role => role.name);\r",
+															"    const expectedRoles = [\"Reviewer\", \"Project Manager\"];\r",
+															"    expectedRoles.forEach(expectedRole => {\r",
+															"        pm.expect(roles).to.include(expectedRole);\r",
+															"    });\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "328b0287-01c9-4dae-88b7-f9af63822c61",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
 											},
