@@ -869,6 +869,56 @@
 										},
 										{
 											"name": "FetchRoles-EmptyValues",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "860a87bd-2323-4241-a268-cb556cc51ac9",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response structure is valid\", function () {\r",
+															"    const jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData).to.have.property(\"status\", true);\r",
+															"    pm.expect(jsonData).to.have.property(\"message\", \"Operation completed successfully\");\r",
+															"    pm.expect(jsonData).to.have.property(\"data\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Count matches roles array length\", function () {\r",
+															"    const jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.data.count).to.equal(jsonData.data.data.length);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Page number is correct\", function () {\r",
+															"    const jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.data).to.have.property(\"pageNumber\", 1);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Each role has required fields\", function () {\r",
+															"    const roles = pm.response.json().data.data;\r",
+															"    roles.forEach(role => {\r",
+															"        pm.expect(role).to.have.property(\"name\").that.is.a(\"string\");\r",
+															"        pm.expect(role).to.have.property(\"id\").that.is.a(\"string\");\r",
+															"        pm.expect(role).to.have.property(\"dateCreated\").that.is.a(\"string\");\r",
+															"        pm.expect(role).to.have.property(\"dateModified\");\r",
+															"    });\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Roles contain specific entries\", function () {\r",
+															"    const roles = pm.response.json().data.data.map(role => role.name);\r",
+															"    const expectedRoles = [\"Reviewer\", \"Project Manager\"];\r",
+															"    expectedRoles.forEach(expectedRole => {\r",
+															"        pm.expect(roles).to.include(expectedRole);\r",
+															"    });\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "4db26369-7e1e-4f15-81b9-01ab02922a88",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -886,7 +936,7 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/v1/Authentication/GetRoles?PageSize=2&PageNumber=2&SearchString=",
+													"raw": "{{baseUrl}}/api/v1/Authentication/GetRoles",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -899,15 +949,18 @@
 													"query": [
 														{
 															"key": "PageSize",
-															"value": "2"
+															"value": "",
+															"disabled": true
 														},
 														{
 															"key": "PageNumber",
-															"value": "2"
+															"value": "",
+															"disabled": true
 														},
 														{
 															"key": "SearchString",
-															"value": ""
+															"value": "",
+															"disabled": true
 														}
 													]
 												},
