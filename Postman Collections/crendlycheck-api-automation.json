@@ -4905,6 +4905,38 @@
 				}
 			],
 			"id": "be527eef-a9a7-4e7a-86f9-a153d2ded711"
+		},
+		{
+			"name": "https://crendlycheck-sandbox.azurewebsites.net/api/v1/Authentication/SignIn",
+			"id": "b9693e4a-2672-454d-aaf8-b45889daa943",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"tea@yopmail.com\",\r\n  \"password\": \"@Testing123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://crendlycheck-sandbox.azurewebsites.net/api/v1/Authentication/SignIn",
+				"description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://crendlycheck-sandbox.azurewebsites.net/api/v1/Authentication/SignIn' \\\r\n  -H 'accept: text/plain' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"email\": \"tea@yopmail.com\",\r\n  \"password\": \"@Testing123\"\r\n}'"
+			},
+			"response": []
 		}
 	],
 	"auth": {
