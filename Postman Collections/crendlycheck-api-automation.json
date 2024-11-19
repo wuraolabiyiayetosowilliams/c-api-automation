@@ -1150,7 +1150,7 @@
 											"name": "{roleId}",
 											"item": [
 												{
-													"name": "/api/v1/Authentication/GetRole/:roleId",
+													"name": "FetchRole-NoID",
 													"id": "d84c4e22-070c-42e2-9410-94a5f3998ae6",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
