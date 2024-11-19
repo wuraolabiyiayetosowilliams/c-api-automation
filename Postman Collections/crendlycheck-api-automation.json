@@ -1263,7 +1263,7 @@
 															"script": {
 																"id": "8e0fac69-c45e-4d0a-9043-bc8220db3f89",
 																"exec": [
-																	"pm.test(\"Status code is 404\", function () {\r",
+																	"pm.test(\"Status code is 200\", function () {\r",
 																	"    pm.response.to.have.status(200);\r",
 																	"});\r",
 																	"\r",
@@ -1424,7 +1424,7 @@
 															"variable": [
 																{
 																	"key": "roleId",
-																	"value": "9589cf95-42b2-486c-8056-6cae1e3d8b3e",
+																	"value": "9",
 																	"description": "(Required) "
 																}
 															]
