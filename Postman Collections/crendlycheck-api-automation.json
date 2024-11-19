@@ -1390,7 +1390,7 @@
 											]
 										},
 										{
-											"name": "AddRole-Dupliate name and persmissionID Copy",
+											"name": "AddRole-Invalid persmissionID",
 											"event": [
 												{
 													"listen": "test",
@@ -1401,8 +1401,8 @@
 															"    pm.response.to.have.status(400);\r",
 															"});\r",
 															"\r",
-															"pm.test(\"Duplicate name and permissionID validation\", function () {\r",
-															"    pm.expect(pm.response.json().message).to.equal(\"'Name' already exist.\");\r",
+															"pm.test(\"Invalid permissionID validation\", function () {\r",
+															"    pm.expect(pm.response.json().message).to.equal(\"Invalid permissionID\");\r",
 															"});\r",
 															"\r",
 															""
@@ -1430,7 +1430,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"name\": \"Super Admin\",\n  \"permissionId\": [\n    \"39b84296-1725-47c4-aca9-2b6cbcb9cdbb\"\n  ]\n}",
+													"raw": "{\n  \"name\": \"Super Admin\",\n  \"permissionId\": [\n    \"39b842]9-2b6cbcb9cdbb\"\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
