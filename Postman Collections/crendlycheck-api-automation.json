@@ -724,6 +724,42 @@
 										},
 										{
 											"name": "AddKYC-ValidDocumentURLs",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "0b4181ab-efdc-4276-847c-1f9ba30b5c8f",
+														"exec": [
+															"const jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Status code is 200 Created\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains expected fields\", function () {\r",
+															"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"KYC document added successfully\");\r",
+															"    pm.expect(jsonData).to.have.property(\"data\").that.is.an(\"object\");\r",
+															"\r",
+															"    const data = jsonData.data;\r",
+															"    pm.expect(data).to.have.property(\"utilityBillUrl\").that.is.a(\"string\").that.is.not.empty;\r",
+															"    pm.expect(data).to.have.property(\"CacUrlDocument\").that.is.a(\"string\").that.is.not.empty;\r",
+															"    pm.expect(data).to.have.property(\"TaxClearanceUrldocument\").that.is.a(\"string\").that.is.not.empty;\r",
+															"});\r",
+															"\r",
+															"pm.test(\"All URLs are valid\", function () {\r",
+															"    const urlRegex = /^(http|https):\\/\\/[^\\s$.?#].[^\\s]*$/;\r",
+															"\r",
+															"    pm.expect(jsonData.data.utilityBillUrl).to.match(urlRegex);\r",
+															"    pm.expect(jsonData.data.CacUrlDocument).to.match(urlRegex);\r",
+															"    pm.expect(jsonData.data.TaxClearanceUrldocument).to.match(urlRegex);\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "c0af04a5-f583-4208-88b2-5b697d3df2e0",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -742,7 +778,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"utilityBillUrl\": \"<string>\",\n  \"cacDocumentUrl\": \"<string>\",\n  \"taxClearanceUrl\": \"<string>\"\n}",
+													"raw": "{\n  \"utilityBillUrl\": \"https://i0.wp.com/lawpadi.com/wp-content/uploads/2016/09/cert-of-inc.png?fit=462%2C598&ssl=1\",\n  \"cacDocumentUrl\": \"https://i0.wp.com/lawpadi.com/wp-content/uploads/2016/09/cert-of-inc.png?fit=462%2C598&ssl=1\",\n  \"taxClearanceUrl\": \"https://i0.wp.com/lawpadi.com/wp-content/uploads/2016/09/cert-of-inc.png?fit=462%2C598&ssl=1\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
