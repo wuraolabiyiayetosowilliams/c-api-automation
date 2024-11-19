@@ -1232,7 +1232,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"name\": \"Reviewer\",\n  \"permissionId\": [\n    \"ec522b97-4877-4d16-8244-2ea029d060db\"\n  ]\n}",
+													"raw": "{\n  \"name\": \"Analyst\",\n  \"permissionId\": [\n    \"9589cf95-42b2-486c-8056-6cae1e3d8b3e\"\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
