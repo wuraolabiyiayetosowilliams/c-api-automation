@@ -1730,7 +1730,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"name\": \"Analyst\",\n  \"permissionId\": [\n    \"9589cf95-42b2-486c-8056-6cae1e3d8b3e\"\n  ]\n}",
+													"raw": "{\n  \"name\": \"User\",\n  \"permissionId\": [\n    \"9589cf95-42b2-486c-8056-6cae1e3d8b3e\"\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
