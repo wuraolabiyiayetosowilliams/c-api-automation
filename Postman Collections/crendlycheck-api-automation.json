@@ -2401,9 +2401,19 @@
 															"    pm.response.to.have.status(400);\r",
 															"});\r",
 															"\r",
-															"pm.test(\"AddUser with duplicate PhoneNumber\", function () {\r",
+															"pm.test(\"AddUser with MissingData\", function () {\r",
 															"    var jsonData = pm.response.json();\r",
-															"    pm.expect(jsonData.message).to.include(\"'Phone Number' already exist.\");\r",
+															"    pm.expect(jsonData.errors.roleId).to.include(\"roleId is required\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"AddUser with MissingData\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.errors.email).to.include(\"Email is required\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"AddUser with MissingData\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.errors.lastName).to.include(\"lastName is required\");\r",
 															"});"
 														],
 														"type": "text/javascript",
@@ -2429,7 +2439,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"email\": \"ay@mailinator.com\",\n  \"firstName\": \"Damilola\",\n  \"lastName\": \"Sandra\",\n  \"phoneNumber\": \"09134543345\",\n  \"roleId\": \"01d28f8f-f7b2-4ea1-98c2-6336034ce9c9\"\n}",
+													"raw": "{\n  \"email\": \"\",\n  \"firstName\": \"Damilola\",\n  \"lastName\": \"\",\n  \"phoneNumber\": \"09134543345\",\n  \"roleId\": \"\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
