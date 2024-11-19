@@ -620,6 +620,32 @@
 									"item": [
 										{
 											"name": "AddKYC-NoDocProvided",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "93f1af48-bbd1-4be0-8e7e-89396a26b14b",
+														"exec": [
+															"const jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Status code is 400 Bad Request\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Error message for missing utilityBillUrl\", function () {\r",
+															"    pm.expect(jsonData).to.have.property(\"error\").that.includes(\"utilityBill is required\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Error message for missing cacDocumentUrl\", function () {\r",
+															"    pm.expect(jsonData).to.have.property(\"error\").that.includes(\"CacDocument is required\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "fc9920a8-2304-45b8-973f-a49824f240bd",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -697,7 +723,7 @@
 											]
 										},
 										{
-											"name": "AddKYC-NoUrlProvided Copy",
+											"name": "AddKYC-ValidDocumentURLs",
 											"id": "c0af04a5-f583-4208-88b2-5b697d3df2e0",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
