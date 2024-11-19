@@ -619,7 +619,7 @@
 									"name": "AddKycDocuments",
 									"item": [
 										{
-											"name": "/api/v1/Authentication/AddKycDocuments",
+											"name": "AddKYC-NoUrlProvided",
 											"id": "fc9920a8-2304-45b8-973f-a49824f240bd",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -651,6 +651,84 @@
 											"response": [
 												{
 													"id": "7250bcdd-88c2-49f0-9488-11b3848595c4",
+													"name": "Success",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"utilityBillUrl\": \"<string>\",\n  \"cacDocumentUrl\": \"<string>\",\n  \"taxClearanceUrl\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/Authentication/AddKycDocuments"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "AddKYC-NoUrlProvided Copy",
+											"id": "c0af04a5-f583-4208-88b2-5b697d3df2e0",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"utilityBillUrl\": \"<string>\",\n  \"cacDocumentUrl\": \"<string>\",\n  \"taxClearanceUrl\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/AddKycDocuments"
+											},
+											"response": [
+												{
+													"id": "921444f4-d328-4a6a-a386-f952786ec4cc",
 													"name": "Success",
 													"originalRequest": {
 														"method": "PUT",
