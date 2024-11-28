@@ -3470,7 +3470,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"email\": \"tea@yopmail.com\"\n}",
+													"raw": "{\n  \"email\": \"mat@yopmail.com\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -4323,7 +4323,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"email\": \"eat@mailinator.com\",\n  \"code\": \" 9743\"\n}",
+													"raw": "{\n  \"email\": \"tam@mailinator.com\",\n  \"code\": \"7730\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -4702,7 +4702,7 @@
 												"header": [],
 												"body": {
 													"mode": "raw",
-													"raw": "{\r\n  \"email\": \"tea@yopmail.com\",\r\n  \"code\": \"5763\"\r\n}",
+													"raw": "{\r\n  \"email\": \"mat@yopmail.com\",\r\n  \"code\": \"5436\"\r\n}",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -5182,7 +5182,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"email\": \"tea@yopmail.com\",\n  \"password\": \"@Testing123\"\n}",
+													"raw": "{\n  \"email\": \"mat@yopmail.com\",\n  \"password\": \"@Testing123\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -5984,7 +5984,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"email\": \"tea@yopmail.com\",\n  \"password\": \"@Testing123\"\n}",
+											"raw": "{\n  \"email\": \"mat@yopmail.com\",\n  \"password\": \"@Testing123\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
