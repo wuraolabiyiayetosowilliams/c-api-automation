@@ -5941,6 +5941,110 @@
 											"body": "{\n  \"data\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
 										}
 									]
+								},
+								{
+									"name": "SignIn-Valid details Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "281239de-5442-4036-81ce-1ee93fba7c45",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response contains token\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData).to.have.property(\"token\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response contains user details\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.user).to.have.property(\"email\", \"user@example.com\");\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "b7a38893-dba7-4e8c-ac24-c4b3f5731d79",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"tea@yopmail.com\",\n  \"password\": \"@Testing123\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/Authentication/SignIn"
+									},
+									"response": [
+										{
+											"id": "45de07c5-db81-4b65-b96d-a8a400947a06",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "Authorization",
+														"value": "<API Key>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/Authentication/SignIn"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": {\n    \"dateCreated\": \"<dateTime>\",\n    \"dateModified\": \"<dateTime>\",\n    \"isDeleted\": \"<boolean>\",\n    \"id\": \"<uuid>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"email\": \"<string>\",\n    \"company\": {\n      \"dateCreated\": \"<dateTime>\",\n      \"dateModified\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"companyType\": {\n        \"dateCreated\": \"<dateTime>\",\n        \"dateModified\": \"<dateTime>\",\n        \"id\": \"<uuid>\",\n        \"name\": \"<string>\"\n      },\n      \"primaryAddress\": {\n        \"houseNumber\": \"<string>\",\n        \"street\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"country\": \"<string>\"\n      }\n    },\n    \"role\": {\n      \"dateCreated\": \"<dateTime>\",\n      \"dateModified\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"permissions\": [\n        {\n          \"dateCreated\": \"<dateTime>\",\n          \"dateModified\": \"<dateTime>\",\n          \"id\": \"<uuid>\",\n          \"name\": 0\n        },\n        {\n          \"dateCreated\": \"<dateTime>\",\n          \"dateModified\": \"<dateTime>\",\n          \"id\": \"<uuid>\",\n          \"name\": 4\n        }\n      ]\n    },\n    \"lastLogin\": \"<dateTime>\",\n    \"accessToken\": \"<string>\"\n  },\n  \"message\": \"<string>\",\n  \"status\": \"<boolean>\"\n}"
+										}
+									]
 								}
 							],
 							"id": "bad1a3e9-c7f9-4c09-b25c-f1f44e37c6a8"
