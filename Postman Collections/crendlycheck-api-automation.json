@@ -3825,7 +3825,13 @@
 															"pm.test(\"Missing OTP error message\", function () {\r",
 															"    var jsonData = pm.response.json();\r",
 															"    pm.expect(jsonData.message).to.eql(\"OTP is required\");\r",
-															"});"
+															"});\r",
+															"\r",
+															"pm.test(\"Code field validation error message\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.errors.Code[0]).to.eql(\"The Code field is required.\");\r",
+															"});\r",
+															""
 														],
 														"type": "text/javascript",
 														"packages": {}
