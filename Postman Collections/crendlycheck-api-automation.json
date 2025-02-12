@@ -6059,7 +6059,7 @@
 									"name": "InitiateCredibilityCheck",
 									"item": [
 										{
-											"name": "InitiateCredibilityCheck-Valid details",
+											"name": "InitiateCredibilityCheck-CrendlyUser",
 											"id": "3d5f368d-bc47-4883-91fc-3ef48f22c679",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
