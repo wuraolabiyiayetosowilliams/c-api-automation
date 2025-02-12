@@ -6329,44 +6329,25 @@
 													"script": {
 														"id": "2e76c5dc-941e-4899-aa12-c53ffacdb29e",
 														"exec": [
-															"pm.test(\"Status code is 200\", function () {\r",
-															"    pm.response.to.have.status(200);\r",
+															"pm.test(\"Status code is 201\", function () {\r",
+															"    pm.response.to.have.status(201);\r",
 															"});\r",
-															"\r",
-															"pm.test(\"Response has required fields\", function () {\r",
+															"pm.test(\"Response has correct schema\", function () {\r",
 															"    const response = pm.response.json();\r",
 															"    pm.expect(response).to.have.property(\"data\");\r",
-															"    pm.expect(response).to.have.property(\"message\");\r",
-															"    pm.expect(response).to.have.property(\"status\");\r",
-															"    pm.expect(response.message).to.eql(\"Operation completed successfully\"); \r",
-															"});\r",
-															"\r",
-															"pm.test(\"User details are present\", function () {\r",
-															"    const response = pm.response.json();\r",
+															"    pm.expect(response.data).to.have.property(\"sessionId\").that.is.a(\"string\");\r",
 															"    pm.expect(response.data).to.have.property(\"firstName\").that.is.a(\"string\");\r",
-															"    pm.expect(response.data).to.have.property(\"lastName\").that.is.a(\"string\");\r",
 															"    pm.expect(response.data).to.have.property(\"middleName\");\r",
+															"    pm.expect(response.data).to.have.property(\"lastName\").that.is.a(\"string\");\r",
+															"    pm.expect(response).to.have.property(\"message\").that.is.a(\"string\");\r",
+															"    pm.expect(response).to.have.property(\"status\").that.is.a(\"boolean\");\r",
 															"});\r",
 															"\r",
-															"pm.test(\"Credit score details are correct\", function () {\r",
-															"    const creditDetails = pm.response.json().data.creditScoreDetails;\r",
-															"    pm.expect(creditDetails).to.have.property(\"crendlyScore\").that.is.a(\"number\");\r",
-															"    pm.expect(creditDetails).to.have.property(\"riskProfile\").that.is.a(\"string\");\r",
-															"    \r",
-															"    pm.test(\"ProbabilityOfDefault should not be null or missing\", function () {\r",
-															"        pm.expect(creditDetails).to.have.property(\"probabilityOfDefault\");\r",
-															"        pm.expect(creditDetails.probabilityOfDefault).to.not.be.null;\r",
-															"    });\r",
-															"\r",
-															"    pm.test(\"Loan Limit is valid\", function () {\r",
-															"        pm.expect(creditDetails).to.have.property(\"loanLimit\").that.is.a(\"number\").and.to.be.above(0);\r",
-															"    });\r",
-															"\r",
-															"    pm.test(\"Verify loan limit is a number\", function () {\r",
-															"        pm.expect(creditDetails.loanLimit).to.be.a('number');\r",
-															"    });\r",
-															"});\r",
-															""
+															"pm.test(\"Verify message is a string and contains the expected value\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property(\"message\").that.is.a(\"string\");\r",
+															"    pm.expect(response.message).to.include(\"request is being processed\");\r",
+															"});"
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -6391,7 +6372,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"bvn\": \"12345648901\",\n  \"dateOfBirth\": \"2004-06-24\",\n  \"email\": \"mara@sharklasers.com\",\n  \"firstName\": \"Prince\",\n  \"gender\": \"Male\",\n  \"lastName\": \"Obi\",\n  \"phoneNumber\": \"08051511111\",\n  \"middleName\": \"<string>\",\n  \"maritalStatus\": \"Widowed\",\n  \"educationalQualification\": \"BachelorsDegreeAndProfessionalQualification\",\n  \"residenceType\": \"None\",\n  \"durationOfResidence\": \"None\",\n  \"residentialArea\": \"<string>\",\n  \"numberOfDependents\": 0,\n  \"employmentStatus\": \"None\",\n  \"addressDetails\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\"\n  }\n}",
+													"raw": "{\n  \"bvn\": \"12345648912\",\n  \"dateOfBirth\": \"2001-06-04\",\n  \"email\": \"dammisi@yopmail.com\",\n  \"firstName\": \"Dapo\",\n  \"gender\": \"Male\",\n  \"lastName\": \"Dammisi\",\n  \"phoneNumber\": \"08051512222\",\n  \"middleName\": \"<string>\",\n  \"maritalStatus\": \"Widowed\",\n  \"educationalQualification\": \"BachelorsDegreeAndProfessionalQualification\",\n  \"residenceType\": \"None\",\n  \"durationOfResidence\": \"None\",\n  \"residentialArea\": \"<string>\",\n  \"numberOfDependents\": 0,\n  \"employmentStatus\": \"None\",\n  \"addressDetails\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\"\n  }\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -6539,6 +6520,250 @@
 												},
 												{
 													"id": "2fa7772d-e5b9-44a8-abac-3bd9feb781b2",
+													"name": "Internal Server Error",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"bvn\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"email\": \"8uCY@TIUy.IJLOT\",\n  \"firstName\": \"<string>\",\n  \"gender\": \"Male\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"maritalStatus\": \"Widowed\",\n  \"educationalQualification\": \"BachelorsDegreeAndProfessionalQualification\",\n  \"residenceType\": \"None\",\n  \"durationOfResidence\": \"None\",\n  \"residentialArea\": \"<string>\",\n  \"numberOfDependents\": \"<integer>\",\n  \"employmentStatus\": \"None\",\n  \"addressDetails\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/InitiateCredibilityCheck"
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"creditScoreDetails\": {\n      \"crendlyScore\": \"<double>\",\n      \"riskProfile\": \"<string>\",\n      \"probabilityOfDefault\": \"<string>\",\n      \"loanLimit\": \"<double>\",\n      \"class\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "InitiateCredibilityCheck-EmptyRequiredDetails",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "2e76c5dc-941e-4899-aa12-c53ffacdb29e",
+														"exec": [
+															"pm.test(\"Status code is 201\", function () {\r",
+															"    pm.response.to.have.status(201);\r",
+															"});\r",
+															"pm.test(\"Response has correct schema\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property(\"data\");\r",
+															"    pm.expect(response.data).to.have.property(\"sessionId\").that.is.a(\"string\");\r",
+															"    pm.expect(response.data).to.have.property(\"firstName\").that.is.a(\"string\");\r",
+															"    pm.expect(response.data).to.have.property(\"middleName\");\r",
+															"    pm.expect(response.data).to.have.property(\"lastName\").that.is.a(\"string\");\r",
+															"    pm.expect(response).to.have.property(\"message\").that.is.a(\"string\");\r",
+															"    pm.expect(response).to.have.property(\"status\").that.is.a(\"boolean\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Verify message is a string and contains the expected value\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property(\"message\").that.is.a(\"string\");\r",
+															"    pm.expect(response.message).to.include(\"request is being processed\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "aa33681e-1a46-4e25-b0fb-e8e3fd1de55b",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"bvn\": \"12345648912\",\n  \"dateOfBirth\": \"2001-06-04\",\n  \"email\": \"dammisi@yopmail.com\",\n  \"firstName\": \"Dapo\",\n  \"gender\": \"Male\",\n  \"lastName\": \"Dammisi\",\n  \"phoneNumber\": \"08051512222\",\n  \"middleName\": \"<string>\",\n  \"maritalStatus\": \"Widowed\",\n  \"educationalQualification\": \"BachelorsDegreeAndProfessionalQualification\",\n  \"residenceType\": \"None\",\n  \"durationOfResidence\": \"None\",\n  \"residentialArea\": \"<string>\",\n  \"numberOfDependents\": 0,\n  \"employmentStatus\": \"None\",\n  \"addressDetails\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/CredibilityAssessment/InitiateCredibilityCheck"
+											},
+											"response": [
+												{
+													"id": "db1a0054-296a-45e1-97d3-6cd4420192ff",
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"bvn\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"email\": \"8uCY@TIUy.IJLOT\",\n  \"firstName\": \"<string>\",\n  \"gender\": \"Male\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"maritalStatus\": \"Widowed\",\n  \"educationalQualification\": \"BachelorsDegreeAndProfessionalQualification\",\n  \"residenceType\": \"None\",\n  \"durationOfResidence\": \"None\",\n  \"residentialArea\": \"<string>\",\n  \"numberOfDependents\": \"<integer>\",\n  \"employmentStatus\": \"None\",\n  \"addressDetails\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/InitiateCredibilityCheck"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"creditScoreDetails\": {\n      \"crendlyScore\": \"<double>\",\n      \"riskProfile\": \"<string>\",\n      \"probabilityOfDefault\": \"<string>\",\n      \"loanLimit\": \"<double>\",\n      \"class\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
+												},
+												{
+													"id": "64089d7d-d067-4ef0-a187-fc1b483cc561",
+													"name": "Created",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"bvn\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"email\": \"8uCY@TIUy.IJLOT\",\n  \"firstName\": \"<string>\",\n  \"gender\": \"Male\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"maritalStatus\": \"Widowed\",\n  \"educationalQualification\": \"BachelorsDegreeAndProfessionalQualification\",\n  \"residenceType\": \"None\",\n  \"durationOfResidence\": \"None\",\n  \"residentialArea\": \"<string>\",\n  \"numberOfDependents\": \"<integer>\",\n  \"employmentStatus\": \"None\",\n  \"addressDetails\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/InitiateCredibilityCheck"
+													},
+													"status": "Created",
+													"code": 201,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"creditScoreDetails\": {\n      \"crendlyScore\": \"<double>\",\n      \"riskProfile\": \"<string>\",\n      \"probabilityOfDefault\": \"<string>\",\n      \"loanLimit\": \"<double>\",\n      \"class\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
+												},
+												{
+													"id": "174665ef-d314-4db5-8dd2-ba77862224da",
+													"name": "Bad Request",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"bvn\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"email\": \"8uCY@TIUy.IJLOT\",\n  \"firstName\": \"<string>\",\n  \"gender\": \"Male\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"maritalStatus\": \"Widowed\",\n  \"educationalQualification\": \"BachelorsDegreeAndProfessionalQualification\",\n  \"residenceType\": \"None\",\n  \"durationOfResidence\": \"None\",\n  \"residentialArea\": \"<string>\",\n  \"numberOfDependents\": \"<integer>\",\n  \"employmentStatus\": \"None\",\n  \"addressDetails\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/InitiateCredibilityCheck"
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"creditScoreDetails\": {\n      \"crendlyScore\": \"<double>\",\n      \"riskProfile\": \"<string>\",\n      \"probabilityOfDefault\": \"<string>\",\n      \"loanLimit\": \"<double>\",\n      \"class\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
+												},
+												{
+													"id": "41fa91a9-5c4e-4251-af72-356e33f95f88",
 													"name": "Internal Server Error",
 													"originalRequest": {
 														"method": "POST",
