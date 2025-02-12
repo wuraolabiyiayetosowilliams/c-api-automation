@@ -7064,7 +7064,7 @@
 											"name": "{sessionId}",
 											"item": [
 												{
-													"name": "Endpoint to query the status of credit check on individual",
+													"name": "CreditCheckStatus-Valid SessionID",
 													"id": "257629a6-f5d7-4b7f-92dc-8f4c36911998",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
