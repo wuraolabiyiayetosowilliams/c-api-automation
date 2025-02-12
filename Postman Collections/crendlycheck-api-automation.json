@@ -6810,7 +6810,7 @@
 											]
 										},
 										{
-											"name": "InitiateCredibilityCheck-",
+											"name": "InitiateCredibilityCheck-RegisteredEmail",
 											"event": [
 												{
 													"listen": "test",
