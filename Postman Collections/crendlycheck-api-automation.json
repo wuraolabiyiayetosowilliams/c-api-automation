@@ -7064,7 +7064,7 @@
 											"name": "{sessionId}",
 											"item": [
 												{
-													"name": "CreditCheckStatus-Valid SessionID",
+													"name": "CreditCheckStatus-Valid SessionId",
 													"event": [
 														{
 															"listen": "test",
@@ -7310,7 +7310,7 @@
 													]
 												},
 												{
-													"name": "CreditCheckStatus-Invalid SessionID",
+													"name": "CreditCheckStatus-Invalid sessionId",
 													"event": [
 														{
 															"listen": "test",
@@ -7557,16 +7557,18 @@
 													]
 												},
 												{
-													"name": "CreditCheckStatus-NoSessionID",
+													"name": "CreditCheckStatus-No sessionId",
 													"event": [
 														{
 															"listen": "test",
 															"script": {
 																"id": "5c648c56-4f78-43b5-8e8d-dd00769f18d3",
 																"exec": [
-																	"pm.test(\"Test for invalid sessionID\", function () {\r",
-																	"    pm.expect(pm.response.code).to.equal(404);\r",
-																	"    pm.expect(pm.response.json().message).to.equal(\"No record found\");\r",
+																	"pm.test(\"Test for empty sessionID\", function () {\r",
+																	"    pm.expect(responseCode.code).to.equal(404);\r",
+																	"    pm.expect(responseBody.message).to.equal(\"No record found\");\r",
+																	"    pm.expect(responseBody.data).to.be.null;\r",
+																	"    pm.expect(responseBody.status).to.be.false;\r",
 																	"});\r",
 																	""
 																],
@@ -7601,9 +7603,8 @@
 															],
 															"variable": [
 																{
-																	"id": "8d12edef-b281-4a0d-b9f5-e3818e905da6",
 																	"key": "sessionId",
-																	"value": "230740D6991A98775E3D8EA4",
+																	"value": "",
 																	"description": "(Required) "
 																}
 															]
