@@ -7317,10 +7317,11 @@
 															"script": {
 																"id": "5c648c56-4f78-43b5-8e8d-dd00769f18d3",
 																"exec": [
-																	"pm.test(\"Valid Session ID\", function () {\r",
-																	"    pm.expect(pm.response.json().data.sessionId).to.be.a('string');\r",
-																	"    pm.expect(pm.response.json().data.sessionId).not.to.be.empty;\r",
-																	"});"
+																	"pm.test(\"Test for invalid sessionID\", function () {\r",
+																	"    pm.expect(pm.response.code).to.equal(404);\r",
+																	"    pm.expect(pm.response.json().message).to.equal(\"No record found\");\r",
+																	"});\r",
+																	""
 																],
 																"type": "text/javascript",
 																"packages": {}
@@ -7353,9 +7354,8 @@
 															],
 															"variable": [
 																{
-																	"id": "dab0e979-3895-4083-a2b0-a46899eee714",
 																	"key": "sessionId",
-																	"value": "F81EEC6F230740D6991A98775E3D8EA4",
+																	"value": "230740D6991A98775E3D8EA4",
 																	"description": "(Required) "
 																}
 															]
@@ -7508,6 +7508,254 @@
 														},
 														{
 															"id": "f25e10df-4d74-4a96-b031-9bf1ba1eabe8",
+															"name": "Internal Server Error",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "text/plain"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "Authorization",
+																		"value": "<API Key>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/CredibilityAssessment/ConfirmCreditCheckStatus/:sessionId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"CredibilityAssessment",
+																		"ConfirmCreditCheckStatus",
+																		":sessionId"
+																	],
+																	"variable": [
+																		{
+																			"key": "sessionId"
+																		}
+																	]
+																}
+															},
+															"status": "Internal Server Error",
+															"code": 500,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"sessionStatus\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"creditScoreDetails\": {\n      \"crendlyScore\": \"<double>\",\n      \"riskProfile\": \"<string>\",\n      \"probabilityOfDefault\": \"<string>\",\n      \"loanLimit\": \"<double>\",\n      \"class\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
+														}
+													]
+												},
+												{
+													"name": "CreditCheckStatus-NoSessionID",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "5c648c56-4f78-43b5-8e8d-dd00769f18d3",
+																"exec": [
+																	"pm.test(\"Test for invalid sessionID\", function () {\r",
+																	"    pm.expect(pm.response.code).to.equal(404);\r",
+																	"    pm.expect(pm.response.json().message).to.equal(\"No record found\");\r",
+																	"});\r",
+																	""
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "da2eb4da-1f0b-4284-beea-1a637aa6ac30",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/CredibilityAssessment/ConfirmCreditCheckStatus/:sessionId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"CredibilityAssessment",
+																"ConfirmCreditCheckStatus",
+																":sessionId"
+															],
+															"variable": [
+																{
+																	"id": "8d12edef-b281-4a0d-b9f5-e3818e905da6",
+																	"key": "sessionId",
+																	"value": "230740D6991A98775E3D8EA4",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "cfc149e0-35ae-4366-b2d6-f081d2510043",
+															"name": "OK",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "text/plain"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "Authorization",
+																		"value": "<API Key>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/CredibilityAssessment/ConfirmCreditCheckStatus/:sessionId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"CredibilityAssessment",
+																		"ConfirmCreditCheckStatus",
+																		":sessionId"
+																	],
+																	"variable": [
+																		{
+																			"key": "sessionId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"sessionStatus\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"creditScoreDetails\": {\n      \"crendlyScore\": \"<double>\",\n      \"riskProfile\": \"<string>\",\n      \"probabilityOfDefault\": \"<string>\",\n      \"loanLimit\": \"<double>\",\n      \"class\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
+														},
+														{
+															"id": "e71f3aec-7ea2-4892-a9e4-a04c88d078f3",
+															"name": "Created",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "text/plain"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "Authorization",
+																		"value": "<API Key>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/CredibilityAssessment/ConfirmCreditCheckStatus/:sessionId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"CredibilityAssessment",
+																		"ConfirmCreditCheckStatus",
+																		":sessionId"
+																	],
+																	"variable": [
+																		{
+																			"key": "sessionId"
+																		}
+																	]
+																}
+															},
+															"status": "Created",
+															"code": 201,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"sessionStatus\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"creditScoreDetails\": {\n      \"crendlyScore\": \"<double>\",\n      \"riskProfile\": \"<string>\",\n      \"probabilityOfDefault\": \"<string>\",\n      \"loanLimit\": \"<double>\",\n      \"class\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
+														},
+														{
+															"id": "b471b6b4-7162-42cb-852a-83e9df5508af",
+															"name": "Bad Request",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "text/plain"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "Authorization",
+																		"value": "<API Key>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/CredibilityAssessment/ConfirmCreditCheckStatus/:sessionId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"CredibilityAssessment",
+																		"ConfirmCreditCheckStatus",
+																		":sessionId"
+																	],
+																	"variable": [
+																		{
+																			"key": "sessionId"
+																		}
+																	]
+																}
+															},
+															"status": "Bad Request",
+															"code": 400,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"sessionStatus\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"creditScoreDetails\": {\n      \"crendlyScore\": \"<double>\",\n      \"riskProfile\": \"<string>\",\n      \"probabilityOfDefault\": \"<string>\",\n      \"loanLimit\": \"<double>\",\n      \"class\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
+														},
+														{
+															"id": "a3995626-3765-4dec-9842-d698241826ee",
 															"name": "Internal Server Error",
 															"originalRequest": {
 																"method": "GET",
