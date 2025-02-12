@@ -6817,24 +6817,17 @@
 													"script": {
 														"id": "2e76c5dc-941e-4899-aa12-c53ffacdb29e",
 														"exec": [
-															"pm.test(\"Status code is 201\", function () {\r",
-															"    pm.response.to.have.status(201);\r",
-															"});\r",
-															"pm.test(\"Response has correct schema\", function () {\r",
-															"    const response = pm.response.json();\r",
-															"    pm.expect(response).to.have.property(\"data\");\r",
-															"    pm.expect(response.data).to.have.property(\"sessionId\").that.is.a(\"string\");\r",
-															"    pm.expect(response.data).to.have.property(\"firstName\").that.is.a(\"string\");\r",
-															"    pm.expect(response.data).to.have.property(\"middleName\");\r",
-															"    pm.expect(response.data).to.have.property(\"lastName\").that.is.a(\"string\");\r",
-															"    pm.expect(response).to.have.property(\"message\").that.is.a(\"string\");\r",
-															"    pm.expect(response).to.have.property(\"status\").that.is.a(\"boolean\");\r",
+															"pm.test(\"Status code is 400 or appropriate error status\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([400, 409]);\r",
 															"});\r",
 															"\r",
-															"pm.test(\"Verify message is a string and contains the expected value\", function () {\r",
-															"    const response = pm.response.json();\r",
-															"    pm.expect(response).to.have.property(\"message\").that.is.a(\"string\");\r",
-															"    pm.expect(response.message).to.include(\"request is being processed\");\r",
+															"pm.test(\"Response contains error message for registered email\", function () {\r",
+															"    pm.expect(response).to.have.property(\"message\");\r",
+															"    pm.expect(response.message).to.match(\"Email already existed\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Status is false for duplicate email\", function () {\r",
+															"    pm.expect(response).to.have.property(\"status\").that.is.false;\r",
 															"});"
 														],
 														"type": "text/javascript",
@@ -6860,7 +6853,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"bvn\": \"12345648912\",\n  \"dateOfBirth\": \"2001-06-04\",\n  \"email\": \"dammisi@yopmail.com\",\n  \"firstName\": \"Dapo\",\n  \"gender\": \"Male\",\n  \"lastName\": \"Dammisi\",\n  \"phoneNumber\": \"08051512222\",\n  \"middleName\": \"<string>\",\n  \"maritalStatus\": \"Widowed\",\n  \"educationalQualification\": \"BachelorsDegreeAndProfessionalQualification\",\n  \"residenceType\": \"None\",\n  \"durationOfResidence\": \"None\",\n  \"residentialArea\": \"<string>\",\n  \"numberOfDependents\": 0,\n  \"employmentStatus\": \"None\",\n  \"addressDetails\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\"\n  }\n}",
+													"raw": "{\n  \"bvn\": \"12345648912\",\n  \"dateOfBirth\": \"2001-06-04\",\n  \"email\": \"dammisi@yopmail.com\",\n  \"firstName\": \"Sunday\",\n  \"gender\": \"Male\",\n  \"lastName\": \"Jomiloju\",\n  \"phoneNumber\": \"08051512222\",\n  \"middleName\": \"<string>\",\n  \"maritalStatus\": \"Widowed\",\n  \"educationalQualification\": \"BachelorsDegreeAndProfessionalQualification\",\n  \"residenceType\": \"None\",\n  \"durationOfResidence\": \"None\",\n  \"residentialArea\": \"<string>\",\n  \"numberOfDependents\": 0,\n  \"employmentStatus\": \"None\",\n  \"addressDetails\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\"\n  }\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
