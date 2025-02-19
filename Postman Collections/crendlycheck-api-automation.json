@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "ac4fa02f-e756-44ed-a40e-24a424e2ea4f",
 		"name": "Crendly-Check",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.postman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
@@ -9246,7 +9246,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "df8aaf2a-76ac-4325-8882-f211e9c424cd",
+				"id": "de492c19-8fb6-4af0-8012-37a83282472e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -9257,7 +9257,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "30baa571-11dd-438f-b5ae-9abb88b790b8",
+				"id": "b3481ec2-1cb8-4896-a219-4f2d011dc52a",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -9274,12 +9274,14 @@
 		{
 			"key": "bus_email",
 			"value": "",
-			"type": "string"
+			"type": "string",
+			"disabled": true
 		},
 		{
 			"key": "phone_number",
 			"value": "",
-			"type": "string"
+			"type": "string",
+			"disabled": true
 		},
 		{
 			"key": "companyTypeId",
