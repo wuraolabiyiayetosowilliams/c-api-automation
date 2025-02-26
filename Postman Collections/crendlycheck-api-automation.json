@@ -9145,6 +9145,29 @@
 									"item": [
 										{
 											"name": "FetchResdentialAreas",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "2b0e956a-452f-4b9b-93db-fc27def06616",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"pm.test(\"Verify the response body is an array\", function () {\r",
+															"    pm.expect(pm.response.json().data).to.be.an('array');\r",
+															"});\r",
+															"pm.test(\"Verify each area in the response\", function () {\r",
+															"    pm.response.json().data.forEach((item) => {\r",
+															"        pm.expect(item.area).to.be.a('string');\r",
+															"    });\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "dbb15c95-e229-4198-96f6-74532c417b2f",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
