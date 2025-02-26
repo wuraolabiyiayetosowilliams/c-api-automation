@@ -9144,7 +9144,7 @@
 									"name": "GetResidenceAreas",
 									"item": [
 										{
-											"name": "Endpoint to fetch list of residential areas/landmarks",
+											"name": "FetchResdentialAreas",
 											"id": "dbb15c95-e229-4198-96f6-74532c417b2f",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
