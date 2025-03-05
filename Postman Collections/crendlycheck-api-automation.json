@@ -7815,7 +7815,7 @@
 									"name": "GetIndividualCheckDetails",
 									"item": [
 										{
-											"name": "Endpoint to get the details of check on an individual",
+											"name": "Check for Individual's Details",
 											"id": "690c3d7e-eed5-46dd-884a-147ca906f0a3",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
