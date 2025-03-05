@@ -8409,7 +8409,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"<boolean>\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
+													"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"13180752786\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"<string>\",\n  \"dateOfBirth\": \"2002-03-05\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"<boolean>\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -8609,7 +8609,7 @@
 									"name": "LinkBankAccount",
 									"item": [
 										{
-											"name": "Endpoint to link bank account",
+											"name": "LinkBankAccount -",
 											"id": "00c3dbb7-6a99-494f-84e7-4a4946059c35",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
