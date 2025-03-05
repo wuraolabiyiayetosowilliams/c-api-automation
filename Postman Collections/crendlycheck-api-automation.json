@@ -7965,7 +7965,7 @@
 									"item": [
 										{
 											"name": "VerifyBvn - Invalid Bvn",
-											"id": "9fdf54c7-1131-4151-9436-a1e88b1b9ceb",
+											"id": "6ab535e3-e596-4c4f-81ff-bf2f149d6042",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
 											},
@@ -7983,7 +7983,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dateOfBirth\": \"<date>\"\n}",
+													"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"<boolean>\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -7995,7 +7995,7 @@
 											},
 											"response": [
 												{
-													"id": "5956643e-e525-4b9b-9400-cc1ff1771362",
+													"id": "471989c7-44d1-44a6-b54b-9edae468f9c9",
 													"name": "OK",
 													"originalRequest": {
 														"method": "POST",
@@ -8016,7 +8016,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dateOfBirth\": \"<date>\"\n}",
+															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"<boolean>\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -8040,7 +8040,7 @@
 													"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"customerId\": \"<string>\",\n    \"isBvnVerified\": \"<boolean>\",\n    \"isPhoneNumberVerified\": \"<boolean>\",\n    \"bvnData\": {\n      \"status\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"dateOfBirth\": \"<string>\",\n      \"idNumber\": \"<string>\",\n      \"gender\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
 												},
 												{
-													"id": "2f1f1c69-a396-4a22-a60b-d10c9f4283fa",
+													"id": "ce8865b7-b9b8-45b6-be4d-ae3ef5c085a0",
 													"name": "Bad Request",
 													"originalRequest": {
 														"method": "POST",
@@ -8061,7 +8061,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dateOfBirth\": \"<date>\"\n}",
+															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"<boolean>\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -8085,7 +8085,7 @@
 													"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"customerId\": \"<string>\",\n    \"isBvnVerified\": \"<boolean>\",\n    \"isPhoneNumberVerified\": \"<boolean>\",\n    \"bvnData\": {\n      \"status\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"dateOfBirth\": \"<string>\",\n      \"idNumber\": \"<string>\",\n      \"gender\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
 												},
 												{
-													"id": "20a52ee9-6645-4fcc-8b8f-15e8d87bed4c",
+													"id": "545cd7d6-c256-414f-914c-38353dc8192c",
 													"name": "Not Found",
 													"originalRequest": {
 														"method": "POST",
@@ -8106,7 +8106,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dateOfBirth\": \"<date>\"\n}",
+															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"<boolean>\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -8130,7 +8130,7 @@
 													"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"customerId\": \"<string>\",\n    \"isBvnVerified\": \"<boolean>\",\n    \"isPhoneNumberVerified\": \"<boolean>\",\n    \"bvnData\": {\n      \"status\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"dateOfBirth\": \"<string>\",\n      \"idNumber\": \"<string>\",\n      \"gender\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
 												},
 												{
-													"id": "a2970cf5-c01a-4bea-9e71-b5291b730deb",
+													"id": "f81b42a4-36bb-4b5d-a864-1bb7b274afa2",
 													"name": "Internal Server Error",
 													"originalRequest": {
 														"method": "POST",
@@ -8151,7 +8151,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dateOfBirth\": \"<date>\"\n}",
+															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"<boolean>\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -8177,8 +8177,8 @@
 											]
 										},
 										{
-											"name": "VerifyBvn - Empty Fields",
-											"id": "b135ea2e-8d3f-4865-9d9c-5cd5ed466794",
+											"name": "VerifyBvn - Empty Bvn",
+											"id": "c89bc1ec-ca73-41e3-8188-3d50cdfa59fa",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
 											},
@@ -8196,7 +8196,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dateOfBirth\": \"<date>\"\n}",
+													"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"<boolean>\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -8208,7 +8208,7 @@
 											},
 											"response": [
 												{
-													"id": "c96bdb8c-21f4-46fe-9ccf-f21990310bd8",
+													"id": "f7944cad-02e4-418f-b6ce-b582bb26bfa2",
 													"name": "OK",
 													"originalRequest": {
 														"method": "POST",
@@ -8229,7 +8229,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dateOfBirth\": \"<date>\"\n}",
+															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"<boolean>\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -8253,7 +8253,7 @@
 													"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"customerId\": \"<string>\",\n    \"isBvnVerified\": \"<boolean>\",\n    \"isPhoneNumberVerified\": \"<boolean>\",\n    \"bvnData\": {\n      \"status\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"dateOfBirth\": \"<string>\",\n      \"idNumber\": \"<string>\",\n      \"gender\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
 												},
 												{
-													"id": "c294c796-0cc3-4d30-8511-fc333577de7e",
+													"id": "94a75d4e-3b31-4927-b0f4-a3e1f5b401c9",
 													"name": "Bad Request",
 													"originalRequest": {
 														"method": "POST",
@@ -8274,7 +8274,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dateOfBirth\": \"<date>\"\n}",
+															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"<boolean>\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -8298,7 +8298,7 @@
 													"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"customerId\": \"<string>\",\n    \"isBvnVerified\": \"<boolean>\",\n    \"isPhoneNumberVerified\": \"<boolean>\",\n    \"bvnData\": {\n      \"status\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"dateOfBirth\": \"<string>\",\n      \"idNumber\": \"<string>\",\n      \"gender\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
 												},
 												{
-													"id": "04708860-bcbc-4516-a2b5-b1b191e877c5",
+													"id": "1194c8ef-6896-4750-ae1d-5cca50d9d0dc",
 													"name": "Not Found",
 													"originalRequest": {
 														"method": "POST",
@@ -8319,7 +8319,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dateOfBirth\": \"<date>\"\n}",
+															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"<boolean>\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -8343,7 +8343,7 @@
 													"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"customerId\": \"<string>\",\n    \"isBvnVerified\": \"<boolean>\",\n    \"isPhoneNumberVerified\": \"<boolean>\",\n    \"bvnData\": {\n      \"status\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"dateOfBirth\": \"<string>\",\n      \"idNumber\": \"<string>\",\n      \"gender\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
 												},
 												{
-													"id": "f8efc66b-961c-4ea9-8a08-335deba9c70b",
+													"id": "ae95cee9-b4fc-4a51-99a0-228a4592d88f",
 													"name": "Internal Server Error",
 													"originalRequest": {
 														"method": "POST",
@@ -8364,7 +8364,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dateOfBirth\": \"<date>\"\n}",
+															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"<boolean>\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
