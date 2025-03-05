@@ -9311,6 +9311,29 @@
 									"item": [
 										{
 											"name": "TrustAss-ValidId",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "1d15de75-0dad-4688-bf2a-7040bea1879f",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Verify trust assessment submission status\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"    pm.response.to.have.jsonBody('data', true);\r",
+															"    pm.response.to.have.jsonBody('message', \"Operation completed successfully\");\r",
+															"    pm.response.to.have.jsonBody('status', true);\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "a58e2c1d-bef6-4e48-b606-1cb58fa7506b",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -9329,7 +9352,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"answers\": [\n    {\n      \"optionId\": \"<integer>\",\n      \"questionId\": \"<integer>\"\n    },\n    {\n      \"optionId\": \"<integer>\",\n      \"questionId\": \"<integer>\"\n    }\n  ],\n  \"sessionId\": \"<string>\",\n  \"userId\": \"<string>\"\n}",
+													"raw": "{\n  \"answers\": [\n    {\n      \"optionId\": \"2\",\n      \"questionId\": \"2\"\n    },\n    {\n      \"optionId\": \"2\",\n      \"questionId\": \"2\"\n    }\n  ],\n  \"sessionId\": \"31729661AC84420EACCAD144A0C265DB\",\n  \"userId\": \"5194d45d-bce8-4754-a45f-af530834e11d\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
