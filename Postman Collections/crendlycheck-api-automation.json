@@ -9547,6 +9547,28 @@
 										},
 										{
 											"name": "TrustAss-InvalidId",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "96a70bc8-e4e0-4963-b149-30468c69149f",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response should contain correct error message for invalid data\", function () {\r",
+															"    pm.expect(pm.response.json().message).to.equal(\"Oops! It seems check was not initiated before\");\r",
+															"    pm.expect(pm.response.json().data).to.be.false;\r",
+															"    pm.expect(pm.response.json().status).to.be.false;\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "4b58c0c1-3f3f-4533-b97a-d14a927e818b",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -9565,7 +9587,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"answers\": [\n    {\n      \"optionId\": \"<integer>\",\n      \"questionId\": \"<integer>\"\n    },\n    {\n      \"optionId\": \"<integer>\",\n      \"questionId\": \"<integer>\"\n    }\n  ],\n  \"sessionId\": \"<string>\",\n  \"userId\": \"<string>\"\n}",
+													"raw": "{\n  \"answers\": [\n    {\n      \"optionId\": \"21\",\n      \"questionId\": \"21\"\n    },\n    {\n      \"optionId\": \"18\",\n      \"questionId\": \"18\"\n    }\n  ],\n  \"sessionId\": \"31729661AC84420EACCAD144A\",\n  \"userId\": \"5194d45d-bce8\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
