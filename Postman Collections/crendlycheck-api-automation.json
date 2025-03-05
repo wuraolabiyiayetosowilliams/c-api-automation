@@ -8609,7 +8609,7 @@
 									"name": "LinkBankAccount",
 									"item": [
 										{
-											"name": "LinkBankAccount-Valid Data",
+											"name": "LinkBankAcc-Valid Data",
 											"event": [
 												{
 													"listen": "test",
@@ -8840,17 +8840,18 @@
 											]
 										},
 										{
-											"name": "LinkBankAccount-InvalidData",
+											"name": "LinkBankAcc-InvalidData",
 											"event": [
 												{
 													"listen": "test",
 													"script": {
 														"id": "a671f184-730d-4f9e-a7fb-0cc5f139750f",
 														"exec": [
-															"pm.test(\"Verify operation completion\", function () {\r",
-															"    pm.expect(pm.response.json().data).to.be.true;\r",
-															"    pm.expect(pm.response.json().message).to.equal(\"Operation completed successfully\");\r",
-															"    pm.expect(pm.response.json().status).to.be.true;\r",
+															"pm.test(\"Validate invalid data entry of sessionId, userId, okraCustomerId\", () => {\r",
+															"    pm.response.to.have.status(400);\r",
+															"    pm.response.to.have.jsonBody('data', false);\r",
+															"    pm.response.to.have.jsonBody('message', \"Oops! It seems check was not initiated before\");\r",
+															"    pm.response.to.have.jsonBody('status', false);\r",
 															"});\r",
 															""
 														],
@@ -8877,7 +8878,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"okraCustomerId\": \"code_pKgRGYI7o9dofXoYZ6KaBWRX\",\n  \"sessionId\": \"31729661AC84420EACCAD144A0C265DB\",\n  \"userId\": \"5194d45d-bce8-4754-a45f-af530834e11d\"\n}",
+													"raw": "{\n  \"okraCustomerId\": \"code_pKgRGYI7o9dofXoYZ6KaBWRX\",\n  \"sessionId\": \"31729661AC84420EACCA\",\n  \"userId\": \"51954-a45f-af530834e11d\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -9025,6 +9026,238 @@
 												},
 												{
 													"id": "1d781402-3fcc-477e-b3c1-f95e841be38d",
+													"name": "Internal Server Error",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"okraCustomerId\": \"<string>\",\n  \"sessionId\": \"<string>\",\n  \"userId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/LinkBankAccount"
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": \"<boolean>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "LinkBankAcc-EmptyData",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "a671f184-730d-4f9e-a7fb-0cc5f139750f",
+														"exec": [
+															"pm.test(\"Validate invalid data entry of sessionId, userId, okraCustomerId\", () => {\r",
+															"    pm.response.to.have.status(400);\r",
+															"    pm.response.to.have.jsonBody('data', false);\r",
+															"    pm.response.to.have.jsonBody('message', \"Oops! It seems check was not initiated before\");\r",
+															"    pm.response.to.have.jsonBody('status', false);\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "cf2ad326-7d79-4fd7-bf57-b6e1bbb47207",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"okraCustomerId\": \"code_pKgRGYI7o9dofXoYZ6KaBWRX\",\n  \"sessionId\": \"31729661AC84420EACCA\",\n  \"userId\": \"51954-a45f-af530834e11d\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/CredibilityAssessment/LinkBankAccount"
+											},
+											"response": [
+												{
+													"id": "50a039ba-52d2-4fe9-9ce3-1ef375eb2cd0",
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"okraCustomerId\": \"<string>\",\n  \"sessionId\": \"<string>\",\n  \"userId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/LinkBankAccount"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": \"<boolean>\",\n  \"status\": \"<boolean>\"\n}"
+												},
+												{
+													"id": "7b9bb2cb-b275-4285-885b-ff802a868649",
+													"name": "Bad Request",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"okraCustomerId\": \"<string>\",\n  \"sessionId\": \"<string>\",\n  \"userId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/LinkBankAccount"
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": \"<boolean>\",\n  \"status\": \"<boolean>\"\n}"
+												},
+												{
+													"id": "38710960-0cb6-4449-ba63-793fa6007275",
+													"name": "Not Found",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"okraCustomerId\": \"<string>\",\n  \"sessionId\": \"<string>\",\n  \"userId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/LinkBankAccount"
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": \"<boolean>\",\n  \"status\": \"<boolean>\"\n}"
+												},
+												{
+													"id": "4f911955-bb52-4dca-97c9-08ad44bdac93",
 													"name": "Internal Server Error",
 													"originalRequest": {
 														"method": "POST",
