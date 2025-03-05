@@ -9079,7 +9079,7 @@
 													"script": {
 														"id": "a671f184-730d-4f9e-a7fb-0cc5f139750f",
 														"exec": [
-															"pm.test(\"Validate invalid data entry of sessionId, userId, okraCustomerId\", () => {\r",
+															"pm.test(\"Validate empty data\", () => {\r",
 															"    pm.response.to.have.status(400);\r",
 															"    pm.response.to.have.jsonBody('data', false);\r",
 															"    pm.response.to.have.jsonBody('message', \"Oops! It seems check was not initiated before\");\r",
@@ -9110,7 +9110,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"okraCustomerId\": \"code_pKgRGYI7o9dofXoYZ6KaBWRX\",\n  \"sessionId\": \"31729661AC84420EACCA\",\n  \"userId\": \"51954-a45f-af530834e11d\"\n}",
+													"raw": "{\n  \"okraCustomerId\": \"\",\n  \"sessionId\": \"31729661AC84420EACCA\",\n  \"userId\": \"\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -9310,7 +9310,7 @@
 									"name": "SubmitTrustAssessment",
 									"item": [
 										{
-											"name": "Endpoint to submit trust assessment",
+											"name": "TrustAss-ValidId",
 											"id": "a58e2c1d-bef6-4e48-b606-1cb58fa7506b",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -9477,6 +9477,219 @@
 												},
 												{
 													"id": "81ad3fe4-63bc-4866-b6ff-9d2f2a12239e",
+													"name": "Internal Server Error",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"answers\": [\n    {\n      \"optionId\": \"<integer>\",\n      \"questionId\": \"<integer>\"\n    },\n    {\n      \"optionId\": \"<integer>\",\n      \"questionId\": \"<integer>\"\n    }\n  ],\n  \"sessionId\": \"<string>\",\n  \"userId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/SubmitTrustAssessment"
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": \"<boolean>\",\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "TrustAss-ValidId Copy",
+											"id": "4b58c0c1-3f3f-4533-b97a-d14a927e818b",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"answers\": [\n    {\n      \"optionId\": \"<integer>\",\n      \"questionId\": \"<integer>\"\n    },\n    {\n      \"optionId\": \"<integer>\",\n      \"questionId\": \"<integer>\"\n    }\n  ],\n  \"sessionId\": \"<string>\",\n  \"userId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/CredibilityAssessment/SubmitTrustAssessment"
+											},
+											"response": [
+												{
+													"id": "2a49964c-713f-4cc1-a000-fa369bf001b1",
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"answers\": [\n    {\n      \"optionId\": \"<integer>\",\n      \"questionId\": \"<integer>\"\n    },\n    {\n      \"optionId\": \"<integer>\",\n      \"questionId\": \"<integer>\"\n    }\n  ],\n  \"sessionId\": \"<string>\",\n  \"userId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/SubmitTrustAssessment"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": \"<boolean>\",\n  \"status\": \"<boolean>\"\n}"
+												},
+												{
+													"id": "c11ee3de-7915-425a-911a-56a8a115366a",
+													"name": "Bad Request",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"answers\": [\n    {\n      \"optionId\": \"<integer>\",\n      \"questionId\": \"<integer>\"\n    },\n    {\n      \"optionId\": \"<integer>\",\n      \"questionId\": \"<integer>\"\n    }\n  ],\n  \"sessionId\": \"<string>\",\n  \"userId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/SubmitTrustAssessment"
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": \"<boolean>\",\n  \"status\": \"<boolean>\"\n}"
+												},
+												{
+													"id": "54626aa5-0fd2-4f22-a1bf-748c0e1252f6",
+													"name": "Not Found",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"answers\": [\n    {\n      \"optionId\": \"<integer>\",\n      \"questionId\": \"<integer>\"\n    },\n    {\n      \"optionId\": \"<integer>\",\n      \"questionId\": \"<integer>\"\n    }\n  ],\n  \"sessionId\": \"<string>\",\n  \"userId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/SubmitTrustAssessment"
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": \"<boolean>\",\n  \"status\": \"<boolean>\"\n}"
+												},
+												{
+													"id": "854ac742-0ae3-4231-9bd2-cde29b5ee911",
 													"name": "Internal Server Error",
 													"originalRequest": {
 														"method": "POST",
