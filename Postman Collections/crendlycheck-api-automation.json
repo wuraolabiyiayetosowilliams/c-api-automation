@@ -9782,6 +9782,26 @@
 										},
 										{
 											"name": "TrustAss-EmptyId",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "d532f61a-ab1f-4f1d-8dde-f179cb40cfff",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response data should contain the correct error message for empty data\", function () {\r",
+															"    pm.expect(pm.response.json().title).to.equal(\"One or more validation errors occurred.\");\r",
+															"    pm.expect(pm.response.json().errors.request).to.eql([\"The request field is required.\"]);\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "3339f1b8-9eb7-4c23-99a0-9c1b53e33442",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
