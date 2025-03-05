@@ -7983,7 +7983,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"<boolean>\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
+													"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"98769879876\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"dada@yopmail.com\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"Male\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"98765987655\",\n  \"dateOfBirth\": \"2025-09-09\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"Yes, I am\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -8344,6 +8344,219 @@
 												},
 												{
 													"id": "ae95cee9-b4fc-4a51-99a0-228a4592d88f",
+													"name": "Internal Server Error",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"<boolean>\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/VerifyBvn"
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"customerId\": \"<string>\",\n    \"isBvnVerified\": \"<boolean>\",\n    \"isPhoneNumberVerified\": \"<boolean>\",\n    \"bvnData\": {\n      \"status\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"dateOfBirth\": \"<string>\",\n      \"idNumber\": \"<string>\",\n      \"gender\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "VerifyBvn - CheckDataprovided",
+											"id": "9e864b4c-e111-4508-8881-14de701a4b5e",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"<boolean>\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/CredibilityAssessment/VerifyBvn"
+											},
+											"response": [
+												{
+													"id": "c3627bef-243d-47b8-b03b-937f9b7fe64a",
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"<boolean>\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/VerifyBvn"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"customerId\": \"<string>\",\n    \"isBvnVerified\": \"<boolean>\",\n    \"isPhoneNumberVerified\": \"<boolean>\",\n    \"bvnData\": {\n      \"status\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"dateOfBirth\": \"<string>\",\n      \"idNumber\": \"<string>\",\n      \"gender\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
+												},
+												{
+													"id": "d72f9803-0ab5-4d71-9dbd-ed67b93a198d",
+													"name": "Bad Request",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"<boolean>\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/VerifyBvn"
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"customerId\": \"<string>\",\n    \"isBvnVerified\": \"<boolean>\",\n    \"isPhoneNumberVerified\": \"<boolean>\",\n    \"bvnData\": {\n      \"status\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"dateOfBirth\": \"<string>\",\n      \"idNumber\": \"<string>\",\n      \"gender\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
+												},
+												{
+													"id": "d49252ab-bc3a-40ee-849f-d64f8fa84223",
+													"name": "Not Found",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"nin\": \"<string>\",\n  \"dateOfBirth\": \"<date>\",\n  \"employmentDetails\": {\n    \"employer\": \"<string>\",\n    \"occupation\": \"<string>\",\n    \"salaryOrIncomeRange\": \"<string>\",\n    \"politicallyExposed\": \"<boolean>\",\n    \"position\": \"<string>\",\n    \"employmentType\": \"<string>\",\n    \"employmentStatus\": \"<string>\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/VerifyBvn"
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"customerId\": \"<string>\",\n    \"isBvnVerified\": \"<boolean>\",\n    \"isPhoneNumberVerified\": \"<boolean>\",\n    \"bvnData\": {\n      \"status\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"dateOfBirth\": \"<string>\",\n      \"idNumber\": \"<string>\",\n      \"gender\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
+												},
+												{
+													"id": "f0cb9e43-541f-45e2-a926-56c0cd20f609",
 													"name": "Internal Server Error",
 													"originalRequest": {
 														"method": "POST",
