@@ -7964,7 +7964,7 @@
 									"name": "VerifyBvn",
 									"item": [
 										{
-											"name": "Endpoint to verify bvn for credibility check on an individual",
+											"name": "VerifyBvn - Invalid Bvn",
 											"id": "9fdf54c7-1131-4151-9436-a1e88b1b9ceb",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -8131,6 +8131,219 @@
 												},
 												{
 													"id": "a2970cf5-c01a-4bea-9e71-b5291b730deb",
+													"name": "Internal Server Error",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dateOfBirth\": \"<date>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/VerifyBvn"
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"customerId\": \"<string>\",\n    \"isBvnVerified\": \"<boolean>\",\n    \"isPhoneNumberVerified\": \"<boolean>\",\n    \"bvnData\": {\n      \"status\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"dateOfBirth\": \"<string>\",\n      \"idNumber\": \"<string>\",\n      \"gender\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "VerifyBvn - Empty Fields",
+											"id": "b135ea2e-8d3f-4865-9d9c-5cd5ed466794",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dateOfBirth\": \"<date>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/CredibilityAssessment/VerifyBvn"
+											},
+											"response": [
+												{
+													"id": "c96bdb8c-21f4-46fe-9ccf-f21990310bd8",
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dateOfBirth\": \"<date>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/VerifyBvn"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"customerId\": \"<string>\",\n    \"isBvnVerified\": \"<boolean>\",\n    \"isPhoneNumberVerified\": \"<boolean>\",\n    \"bvnData\": {\n      \"status\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"dateOfBirth\": \"<string>\",\n      \"idNumber\": \"<string>\",\n      \"gender\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
+												},
+												{
+													"id": "c294c796-0cc3-4d30-8511-fc333577de7e",
+													"name": "Bad Request",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dateOfBirth\": \"<date>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/VerifyBvn"
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"customerId\": \"<string>\",\n    \"isBvnVerified\": \"<boolean>\",\n    \"isPhoneNumberVerified\": \"<boolean>\",\n    \"bvnData\": {\n      \"status\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"dateOfBirth\": \"<string>\",\n      \"idNumber\": \"<string>\",\n      \"gender\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
+												},
+												{
+													"id": "04708860-bcbc-4516-a2b5-b1b191e877c5",
+													"name": "Not Found",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "Authorization",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"addressInfo\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\",\n    \"residenceHolding\": \"<string>\",\n    \"rentedFor\": \"<string>\"\n  },\n  \"bvn\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"educationalQualification\": \"<string>\",\n  \"email\": \"<string>\",\n  \"employmentStatus\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"maritalStatus\": \"<string>\",\n  \"numberOfDependents\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dateOfBirth\": \"<date>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/CredibilityAssessment/VerifyBvn"
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"message\": \"<string>\",\n  \"data\": {\n    \"sessionId\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"customerId\": \"<string>\",\n    \"isBvnVerified\": \"<boolean>\",\n    \"isPhoneNumberVerified\": \"<boolean>\",\n    \"bvnData\": {\n      \"status\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"dateOfBirth\": \"<string>\",\n      \"idNumber\": \"<string>\",\n      \"gender\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"status\": \"<boolean>\"\n}"
+												},
+												{
+													"id": "f8efc66b-961c-4ea9-8a08-335deba9c70b",
 													"name": "Internal Server Error",
 													"originalRequest": {
 														"method": "POST",
