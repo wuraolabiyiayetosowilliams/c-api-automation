@@ -70,7 +70,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"email\": \"{{$randomUserName}}@mailinator.com\",\n  \"name\": \"{{$randomFullName}}\",//\"Studio_66\"\n  \"phoneNumber\": \"{{$randomPhoneNumber}}\",//08074255255\n  \"companyTypeId\": \"{{companyTypeId}}\",//\"43ece7a6-fd74-4f8f-96a4-21af64427426\"\n  \"adminRequest\": {\n    \"email\": \"{{$randomUserName}}@yopmail.com\",\n    \"firstName\": \"{{$randomFirstName}}\",//\"Damijo\"\n    \"lastName\": \"{{$randomLastName}}\",//\"Damisi-Damijo\"\n    \"phoneNumber\": \"{{$randomPhoneNumberExt}}\"// \"08087334543\"\n  },\n  \"primaryAddress\": {\n    \"city\": \"Ikeja\",\n    \"houseNumber\": \"11\",\n    \"state\": \"Lagos\",\n    \"street\": \"Falomo\",\n    \"country\": \"Nigeria\"\n  }\n}",
+													"raw": "{\n  \"adminRequest\": {\n    \"email\": \"{{$randomUserName}}@yopmail.com\",\n    \"firstName\": \"{{$randomFirstName}}\",//\"Damijo\",\n    \"lastName\": \"{{$randomLastName}}\",//\"Damisi-Damijo\",\n    \"phoneNumber\": \"{{$randomPhoneNumberExt}}\"// \"08087334543\"\n  },\n  \"companyTypeId\": \"{{companyTypeId}}\",//\"43ece7a6-fd74-4f8f-96a4-21af64427426\",\n  \"email\": \"{{$randomUserName}}@mailinator.com\",\n  \"InstitutionName\": \"{{$randomFullName}}\",//\"Studio_66\",\n  \"phoneNumber\": \"{{$randomPhoneNumberExt}}\"// \"08087334543\",\n  \"primaryAddress\": {\n    \"city\": \"Ikeja\",\n    \"houseNumber\": \"11\",\n    \"state\": \"Lagos\",\n    \"street\": \"Falomo\",\n    \"country\": \"Nigeria\"\n  }\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -10743,7 +10743,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"bvn\": \"94694694694\",\n  \"dateOfBirth\": \"<date>\",\n  \"email\": \"zYp@I.GLx\",\n  \"firstName\": \"<string>\",\n  \"gender\": \"Male\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"94569359456\",\n  \"middleName\": \"<string>\",\n  \"nin\": \"1447151\",\n  \"maritalStatus\": \"Married\",\n  \"educationalQualification\": \"MastersDegreeOrPHD\",\n  \"residenceType\": \"Rented\",\n  \"durationOfResidence\": \"MoreThan4Years\",\n  \"residentialArea\": \"<string>\",\n  \"numberOfDependents\": \"<integer>\",\n  \"employmentStatus\": \"None\",\n  \"addressDetails\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\"\n  }\n}",
+													"raw": "{\n  \"bvn\": \"22244334411\",\n  \"dateOfBirth\": \"2002-04-03\",\n  \"email\": \"pastor@yopmail.com\",\n  \"firstName\": \"Wale\",\n  \"gender\": \"Male\",\n  \"lastName\": \"Wale\",\n  \"phoneNumber\": \"09069359456\",\n  \"middleName\": \"Wale\",\n  \"nin\": \"99988888779\",\n  \"maritalStatus\": \"Married\",\n  \"educationalQualification\": \"MastersDegreeOrPHD\",\n  \"residenceType\": \"Rented\",\n  \"durationOfResidence\": \"MoreThan4Years\",\n  \"residentialArea\": \"<string>\",\n  \"numberOfDependents\": \"1-2\",\n  \"employmentStatus\": \"None\",\n  \"addressDetails\": {\n    \"houseNumber\": \"<string>\",\n    \"street\": \"<string>\",\n    \"area\": \"<string>\",\n    \"lga\": \"<string>\",\n    \"state\": \"<string>\"\n  }\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
